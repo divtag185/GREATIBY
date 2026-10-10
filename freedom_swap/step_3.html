@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awaiting Deposit | Freedom Swap by Greatiby</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/global_freedom_styles.css">
+<style>
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 20px 0;
+}
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  border-radius: 28px;
+  padding: 22px 16px 16px;
+}
+
+.st i {
+  display: none;
+  font-size: 11px;
+}
+
+small.k {
+  display: block;
+  font-size: 10px;
+  color: #7B87A8;
+}
+
+.free {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 56px 0 64px;
+  font-size: 16px;
+  color: #333;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 540px;
+}
+
+.wrap>.ttl {
+  margin: 0 4px 16px;
+}
+
+.card {
+  padding: 16px;
+}
+
+.dh {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.dh i {
+  color: #9CA3AF;
+  font-size: 12px;
+}
+
+.cb b.v {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 3px;
+  overflow-wrap: anywhere;
+}
+
+.cb b.big {
+  font-size: 12px;
+}
+
+.qrw {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.qrt {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #EEEFF2;
+  border-radius: 14px;
+  padding: 10px;
+  background: #fff;
+}
+
+.qrt svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.qrw span {
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.one {
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.one .cp {
+  margin-top: 0;
+}
+
+.oidt {
+  font-size: 10px;
+  color: #7B87A8;
+}
+
+.oidt b {
+  font-size: 10px;
+  font-weight: 700;
+  color: #0B0B0B;
+}
+
+.ok {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border-radius: 999px;
+  background: #5F705C;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background .2s;
+}
+
+.ok:hover {
+  background: var(--gd);
+}
+
+@media (max-width: 768px) {
+  header {
+    top: calc(10vh - 58px);
+    margin: 16px 16px 0;
+  }
+  .nav-pill .logo .logo-text {
+    font-size: 18px;
+  }
+  .nav-pill .logo .logo-mark {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  .stage {
+    padding: 22px 14px 0;
+  }
+  .card {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  .ttl {
+    font-size: 14px;
+    margin: 0 2px 12px;
+    gap: 8px;
+  }
+  .ttl a {
+    font-size: 13px;
+  }
+  .cb {
+    background: #fff;
+    border: 0;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  .stepper {
+    background: none;
+    padding: 0 2px 4px;
+    margin-bottom: 10px;
+  }
+  .st {
+    width: 22px;
+    height: 22px;
+    font-size: 9px;
+  }
+  .st i {
+    font-size: 9px;
+  }
+  .st.done b {
+    display: none;
+  }
+  .st.done i {
+    display: inline;
+  }
+  .ln {
+    margin: 0 8px;
+  }
+  small.k {
+    font-size: 8px;
+  }
+  .rw b {
+    font-size: 9px;
+  }
+  .cp {
+    font-size: 10px;
+    margin-top: 14px;
+  }
+  .free {
+    margin: 18px 0 28px;
+    font-size: 11px;
+    gap: 8px;
+  }
+  .free .ico {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+  .card {
+    padding: 0;
+  }
+  .dh {
+    font-size: 10px;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .cb b.v {
+    font-size: 9px;
+  }
+  .cb b.big {
+    font-size: 10px;
+  }
+  .qrt {
+    width: 70px;
+    height: 70px;
+    padding: 8px;
+    border-radius: 12px;
+  }
+  .qrw span {
+    font-size: 8px;
+  }
+  .one {
+    padding: 10px 12px;
+  }
+  .oidt,.oidt b {
+    font-size: 9px;
+  }
+  .sup {
+    font-size: 10px;
+    margin: 14px 0 12px;
+  }
+  .ok {
+    height: 40px;
+    font-size: 12px;
+  }
+}
+</style>
+</head>
+<body class="flow">
+<header>
+  <div class="nav-pill">
+    <a href="#" class="logo">
+      <img src="../assets/gtb_logo_dark.png" alt="logo">
+    </a>
+    <nav class="main-nav">
+      <a href="swap.html">Exchange</a>
+      <a href="history.html">History</a>
+      <a href="#">Support</a>
+    </nav>
+  </div>
+  <div class="header-cta">
+    <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+    <button class="hamburger" onclick="openMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+<div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
+<aside class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <a href="swap.html">Exchange</a>
+  <a href="history.html">History</a>
+  <a href="#">Support</a>
+  <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+</aside>
+<main class="stage">
+  <div class="wrap">
+    <h1 class="ttl">
+      <a href="step_2.html" id="back">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>Awaiting Deposit
+    </h1>
+    <section class="card">
+      <div class="cb stepper">
+        <span class="st done"><b>1</b><i class="fa-solid fa-check"></i></span><span class="ln"></span><span class="st done"><b>2</b><i class="fa-solid fa-check"></i></span><span class="ln"></span><span class="st cur">3</span><span class="ln"></span><span class="st">4</span>
+      </div>
+      <div class="cb">
+        <div class="dh">
+          <i class="fa-solid fa-circle-notch fa-spin"></i>Awaiting deposit
+        </div>
+        <small class="k">You send</small>
+        <b class="v big" id="send"></b>
+        <div class="rw" style="margin-top:14px">
+          <div>
+            <small class="k">Deposit to this address</small>
+            <b class="v" id="depV"></b>
+          </div>
+          <button type="button" class="cp">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+        <div class="qrw">
+          <div class="qrt" id="qr"></div>
+          <span>Scan QR code to deposit</span>
+        </div>
+      </div>
+      <div class="cb rw one">
+        <span class="oidt">Order ID: <b id="oid"></b></span>
+        <button type="button" class="cp">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+      <div class="cb">
+        <div class="rw"><div>
+          <small class="k" id="recL"></small>
+          <b class="v" id="recV"></b>
+        </div>
+        <button type="button" class="cp">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+      <div class="rw" id="refRow">
+        <div>
+          <small class="k" id="refL"></small>
+          <b class="v" id="refV"></b>
+        </div>
+        <button type="button" class="cp">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+      </div>
+      <a class="sup" href="#">Contact Support</a>
+      <a class="ok" href="success.html" id="succ">To Success Page</a>
+    </section>
+  </div>
+  <div class="free">
+    <span class="ico">
+      <i class="fa-solid fa-arrow-up-arrow-down"></i>
+    </span>Freedom Swap by Greatiby
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <a class="logo light" href="#">
+      <img src="../assets/gtb_logo_light.png" alt="logo">
+    </a>
+    <nav class="footer-links">
+      <a href="../legal/legal.html#terms-of-service">Terms</a>
+      <a href="../legal/legal.html#privacy-policy">Privacy</a>
+      <a href="../legal/legal.html#kyc-aml">AML</a>
+    </nav>
+  </div>
+  <p class="copy">
+    &copy; 2026 Greatiby Digital Assets Exchange<span class="dash"> - </span><br class="mob-only">RC-1581814. All rights reserved.
+  </p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const q=new URLSearchParams(location.search);
+const from=q.get('from')||'BTC', to=q.get('to')||'ETH';
+const amt=parseFloat(q.get('amt'))||0.12567;
+const SAMPLE='0xb8c77482c631bdd52er20xb8c77482c631bdd52er2'; 
+const addr=q.get('addr')||SAMPLE, refund=q.has('addr')?q.get('refund'):SAMPLE;
+const order=q.get('order')||'QVroof78ur77';
+const dep=q.get('dep')||SAMPLE;
+$('send').textContent=`${amt} ${from}`;
+$('depV').textContent=dep;
+$('oid').textContent=order;
+$('recL').textContent=`Recipient’s ${to} address`;$('recV').textContent=addr;
+$('refL').textContent=`Refund ${from} address`;$('refV').textContent=refund||'';
+if(!refund)$('refRow').style.display='none';
+const p=o=>new URLSearchParams(Object.assign({from,to,amt,out:q.get('out')||'',addr:q.has('addr')?addr:'',refund:refund||'',email:q.get('email')||'',order,dep},o));
+$('back').href='step_2.html?'+p();
+$('succ').href='success.html?'+p();
+try{const qr=qrcode(0,'M');qr.addData(dep);qr.make();$('qr').innerHTML=qr.createSvgTag({cellSize:4,margin:0,scalable:true})}catch(e){$('qr').style.display='none'}
+document.querySelectorAll('.cp').forEach(b=>b.onclick=async()=>{
+  const i=b.firstElementChild;
+  try{await navigator.clipboard.writeText($(b.dataset.v).textContent);i.className='fa-solid fa-check';setTimeout(()=>i.className='fa-regular fa-copy',1200)}catch(e){}
+});
+function openMenu(){$('mobileMenu').classList.add('open');$('overlay').classList.add('open')}
+function closeMenu(){$('mobileMenu').classList.remove('open');$('overlay').classList.remove('open')}
+</script>
+</body>
+</html>

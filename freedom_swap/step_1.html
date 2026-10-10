@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create Exchange | Freedom Swap by Greatiby</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/global_freedom_styles.css">
+<style>
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 20px 0;
+}
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  border-radius: 28px;
+  padding: 22px 16px 16px;
+}
+
+.st.on {
+  background: var(--g);
+  border-color: var(--g);
+  color: #fff;
+}
+
+.sum small {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.sum .r {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.sum .s {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sum .sw {
+  color: #7B87A8;
+  font-size: 12px;
+}
+
+.coin {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--c);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  flex: none;
+}
+
+.lbl {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0 2px 8px;
+}
+
+.rb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 14px 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  transition: border-color .2s,box-shadow .2s;
+}
+
+.rb:focus-within {
+  border-color: var(--g);
+  box-shadow: 0 0 0 3px rgba(95,112,92,.18);
+}
+
+.rb input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 13px;
+}
+
+.rb input::placeholder {
+  color: #9AA3C0;
+}
+
+.paste {
+  font-size: 11px;
+  color: #9AA3C0;
+}
+
+.rt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rt i {
+  font-size: 10px;
+  transition: rotate .2s;
+}
+
+.rt.exp i {
+  rotate: 180deg;
+}
+
+#refundX {
+  display: none;
+  margin-top: 12px;
+}
+
+#refundX.open {
+  display: block;
+}
+
+.chk {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: #9AA3C0;
+  cursor: pointer;
+}
+
+.chk.on {
+  color: #0B0B0B;
+}
+
+.chk input {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--g);
+}
+
+#mailX {
+  display: none;
+  margin-top: 14px;
+}
+
+#mailX.open {
+  display: block;
+}
+
+.tabsbox {
+  border: 0;
+  padding: 8px 8px 0;
+  margin: 0;
+}
+
+.tb {
+  display: flex;
+}
+
+.tb button {
+  flex: 1;
+  padding: 8px 0;
+  font-size: 11px;
+  color: #9AA3C0;
+  border-bottom: 1px solid #E6E7EB;
+}
+
+.tb button.on {
+  color: #0B0B0B;
+  font-weight: 500;
+  border-bottom: 2px solid var(--g);
+}
+
+.list {
+  list-style: none;
+  min-height: 180px;
+  padding: 14px 0 0;
+}
+
+.it {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.it:hover {
+  background: #F7F7F9;
+}
+
+.av {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #F3F4F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.av .coin {
+  width: 28px;
+  height: 28px;
+  font-size: 15px;
+}
+
+.meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.meta b {
+  display: block;
+  font-size: 12px;
+}
+
+.meta small {
+  display: block;
+  font-size: 9px;
+  color: #9AA3C0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.del {
+  font-size: 10px;
+  font-weight: 500;
+  color: #E5533D;
+  background: #FDECEA;
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 0 14px;
+}
+
+.ill {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+}
+
+.ill .f {
+  font-size: 52px;
+  color: #E5E7EB;
+}
+
+.ill .m {
+  position: absolute;
+  right: 2px;
+  bottom: 4px;
+  font-size: 24px;
+  color: var(--gd);
+}
+
+.empty b {
+  font-size: 12px;
+}
+
+.empty span {
+  font-size: 10px;
+  color: var(--m);
+  margin-top: 2px;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 999px;
+  background: var(--g);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background .2s;
+}
+
+.free {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 56px 0 64px;
+  font-size: 16px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  header {
+    top: calc(10vh - 58px);
+    margin: 16px 16px 0;
+  }
+  .nav-pill .logo .logo-text {
+    font-size: 18px;
+  }
+  .nav-pill .logo .logo-mark {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  .stage {
+    padding: 22px 14px 0;
+  }
+  .card {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  .ttl {
+    font-size: 14px;
+    margin: 0 2px 12px;
+    gap: 8px;
+  }
+  .ttl a {
+    font-size: 13px;
+  }
+  .cb {
+    background: #fff;
+    border: 0;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  .stepper {
+    background: none;
+    padding: 0 2px 4px;
+    margin-bottom: 10px;
+  }
+  .st {
+    width: 22px;
+    height: 22px;
+    font-size: 9px;
+  }
+  .ln {
+    margin: 0 8px;
+  }
+  .sum small {
+    font-size: 9px;
+    margin-bottom: 6px;
+  }
+  .sum .r {
+    font-size: 10px;
+  }
+  .coin {
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
+  }
+  .lbl {
+    font-size: 10px;
+  }
+  .rb {
+    height: 38px;
+    padding: 0 12px;
+  }
+  .rb input {
+    font-size: 11px;
+  }
+  .paste {
+    font-size: 9px;
+  }
+  .rt {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+  .chk {
+    font-size: 9px;
+  }
+  .chk input {
+    width: 12px;
+    height: 12px;
+  }
+  .tabsbox {
+    padding: 6px 8px 8px;
+  }
+  .tb button {
+    font-size: 9px;
+  }
+  .list {
+    min-height: 130px;
+    padding-top: 10px;
+  }
+  .av {
+    width: 28px;
+    height: 28px;
+  }
+  .av .coin {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+  }
+  .meta b {
+    font-size: 9px;
+  }
+  .meta small {
+    font-size: 7px;
+  }
+  .del {
+    font-size: 8px;
+    padding: 5px 9px;
+  }
+  .ill {
+    width: 50px;
+    height: 50px;
+  }
+  .ill .f {
+    font-size: 40px;
+  }
+  .ill .m {
+    font-size: 18px;
+  }
+  .empty b {
+    font-size: 10px;
+  }
+  .empty span {
+    font-size: 8px;
+  }
+  .submit {
+    height: 40px;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  .free {
+    margin: 18px 0 28px;
+    font-size: 11px;
+    gap: 8px;
+  }
+  .free .ico {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+}
+</style>
+</head>
+<body class="flow">
+<header>
+  <div class="nav-pill">
+    <a href="#" class="logo">
+      <img src="../assets/gtb_logo_dark.png" alt="logo">
+    </a>
+    <nav class="main-nav">
+      <a href="swap.html">Exchange</a>
+      <a href="history.html">History</a>
+      <a href="#">Support</a></nav>
+  </div>
+  <div class="header-cta">
+    <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+    <button class="hamburger" onclick="openMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+<div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
+<aside class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <a href="swap.html">Exchange</a>
+  <a href="history.html">History</a>
+  <a href="#">Support</a>
+  <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+</aside>
+
+<main class="stage">
+  <section class="card">
+    <h1 class="ttl">
+      <a href="swap.html">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>Create Exchange
+    </h1>
+
+    <div class="cb stepper">
+      <span class="st on">1</span><span class="ln"></span><span class="st">2</span><span class="ln"></span><span class="st">3</span><span class="ln"></span><span class="st">4</span>
+    </div>
+
+    <div class="cb sum">
+      <small>You send</small>
+      <div class="r">
+        <span class="s" id="sumFrom"></span>
+        <i class="fa-solid fa-right-left sw"></i>
+        <span class="s" id="sumTo"></span>
+      </div>
+    </div>
+
+    <div class="cb">
+      <label class="lbl" for="addr" id="recLbl">Recipient’s ETH address</label>
+      <div class="rb">
+        <input id="addr" type="text" autocomplete="off" spellcheck="false" placeholder="Enter ETH address">
+        <button type="button" class="paste">Paste</button>
+      </div>
+      <button type="button" class="rt" id="refundT">Refund address 
+        <i class="fa-solid fa-caret-down"></i>
+      </button>
+      <div id="refundX">
+        <div class="rb">
+          <input id="refund" type="text" autocomplete="off" spellcheck="false" placeholder="Enter BTC refund address">
+          <button type="button" class="paste">Paste</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb">
+      <label class="chk" id="mailLbl">
+        <input type="checkbox" id="mailChk">Get email notification about this transaction
+      </label>
+      <div id="mailX">
+        <label class="lbl" for="mail" style="margin-top:0">Your email address</label>
+        <div class="rb">
+          <input id="mail" type="email" autocomplete="email" placeholder="Enter your email address">
+        </div>
+      </div>
+    </div>
+
+    <div class="cb tabsbox">
+      <div class="tb">
+        <button class="on">Recent</button>
+        <button>Beneficiary</button>
+      </div>
+      <ul class="list" id="list"></ul>
+    </div>
+
+    <button class="btn btn-primary submit" id="cont" disabled>Continue</button>
+  </section>
+
+  <div class="free">
+    <span class="ico">
+      <i class="fa-solid fa-arrow-up-arrow-down"></i>
+    </span>Freedom Swap by Greatiby
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <a class="logo light" href="#"><span class="logo-mark"><i class="fa-solid fa-g"></i></span><span class="logo-text">Greatiby</span></a>
+    <nav class="footer-links"><a href="../legal/legal.html#terms-of-service">Terms</a><a href="../legal/legal.html#privacy-policy">Privacy</a><a href="../legal/legal.html#kyc-aml">AML</a></nav>
+  </div>
+  <p class="copy">
+    &copy; 2026 Greatiby Digital Assets Exchange<span class="dash"> - </span><br class="mob-only">RC-1581814. All rights reserved.
+  </p>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const C={BTC:{p:67500,c:'#F7931A',i:'fa-brands fa-bitcoin'},ETH:{p:2496.69,c:'#1C1F3A',i:'fa-brands fa-ethereum'},USDT:{p:1,c:'#26A17B',i:'fa-solid fa-dollar-sign'},SOL:{p:150,c:'#8247E5',i:'fa-solid fa-s'},BNB:{p:600,c:'#F3BA2F',i:'fa-solid fa-b'}};
+const rate=(f,t)=>+(C[f].p/C[t].p).toPrecision(1); 
+const q=new URLSearchParams(location.search);
+const from=C[q.get('from')]?q.get('from'):'BTC', to=C[q.get('to')]&&q.get('to')!==from?q.get('to'):(from==='ETH'?'BTC':'ETH');
+const amt=parseFloat(q.get('amt'))||0.12567;
+const out=(amt*rate(from,to)).toLocaleString('en-US',{maximumFractionDigits:5});
+const coin=k=>`<span class="coin" style="--c:${C[k].c}"><i class="${C[k].i}"></i></span>`;
+$('sumFrom').innerHTML=`${coin(from)}<span>${amt} ${from}</span>`;
+$('sumTo').innerHTML=`${coin(to)}<span>${out} ${to}</span>`;
+$('recLbl').textContent=`Recipient’s ${to} address`;
+$('addr').placeholder=`Enter ${to} address`;
+$('refund').placeholder=`Enter ${from} refund address`;
+
+const ADDR='0xb8c77482c631bdd52er2';
+const data={recent:[],ben:[{n:'BTC Wallet',a:ADDR},{n:'BTC Wallet',a:ADDR}]};
+let tab='recent';
+const short=a=>a.length>24?a.slice(0,13)+'.....'+a.slice(-9):a;
+function renderList(){
+  const L=$('list'),d=data[tab];
+  if(!d.length){
+    L.innerHTML=`<li class="empty"><div class="ill"><i class="fa-regular fa-file-lines f"></i><i class="fa-solid fa-magnifying-glass m"></i></div><b>No ${tab==='ben'?'Beneficiary':'Recent Address'} yet!</b><span>All your ${tab==='ben'?'beneficiaries':'recent'} will appear here</span></li>`;
+    return;
+  }
+  L.innerHTML=d.map((x,i)=>`<li class="it" data-i="${i}"><span class="av">${coin('BTC')}</span><div class="meta"><b>${x.n}</b><small>${short(x.a)}</small></div><button type="button" class="del" data-i="${i}">${tab==='ben'?'Delete':'Clear'}</button></li>`).join('');
+}
+$('list').addEventListener('click',e=>{
+  const del=e.target.closest('.del'), it=e.target.closest('.it');
+  if(del){data[tab].splice(+del.dataset.i,1);renderList();return}
+  if(it){$('addr').value=data[tab][+it.dataset.i].a;validate()}
+});
+document.querySelectorAll('.tb button').forEach(b=>b.onclick=()=>{
+  tab=b.dataset.t;
+  document.querySelectorAll('.tb button').forEach(x=>{x.classList.toggle('on',x===b)});
+  renderList();
+});
+
+const addr=$('addr'),mail=$('mail'),mailChk=$('mailChk'),cont=$('cont');
+function validate(){
+  const ok=/^\S+$/.test(addr.value.trim());
+  const mOk=!mailChk.checked||/^\S+@\S+\.\S+$/.test(mail.value.trim());
+  cont.disabled=!(ok&&mOk);
+}
+[addr,mail,$('refund')].forEach(i=>i.addEventListener('input',validate));
+mailChk.onchange=()=>{$('mailX').classList.toggle('open',mailChk.checked);$('mailLbl').classList.toggle('on',mailChk.checked);validate()};
+$('refundT').onclick=()=>{const o=$('refundX').classList.toggle('open');$('refundT').classList.toggle('exp',o)};
+document.querySelectorAll('.paste').forEach(b=>b.onclick=async()=>{
+  try{const t=await navigator.clipboard.readText();$(b.dataset.p).value=t.trim();validate()}catch(e){$(b.dataset.p).focus()}
+});
+cont.onclick=()=>{
+  const p=new URLSearchParams({from,to,amt,out:out.replace(/,/g,''),addr:addr.value.trim(),refund:$('refund').value.trim(),email:mailChk.checked?mail.value.trim():''});
+  location.href='step_2.html?'+p;
+};
+function openMenu(){$('mobileMenu').classList.add('open');$('overlay').classList.add('open')}
+function closeMenu(){$('mobileMenu').classList.remove('open');$('overlay').classList.remove('open')}
+renderList();validate();
+</script>
+</body>
+</html>

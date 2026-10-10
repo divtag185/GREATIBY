@@ -1,0 +1,457 @@
+z<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transaction Receipt | Freedom Swap by Greatiby</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/global_freedom_styles.css">
+<style>
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 20px 0;
+}
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  border-radius: 28px;
+  padding: 22px 16px 16px;
+}
+
+small.k {
+  display: block;
+  font-size: 10px;
+  color: #7B87A8;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 540px;
+}
+
+.card {
+  padding: 16px;
+}
+
+.ok {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border-radius: 999px;
+  background: #5F705C;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background .2s;
+}
+
+.ok:hover {
+  background: var(--gd);
+}
+
+.card {
+  padding: 28px 16px 16px;
+}
+
+.sh h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.x {
+  font-size: 17px;
+  color: #111;
+}
+
+.card {
+  padding: 16px;
+}
+
+.x .m {
+  display: none;
+}
+
+.coin {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--c);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  flex: none;
+}
+
+.hd {
+  background: var(--gd);
+  border-radius: 20px;
+  padding: 18px 16px 125px 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.hd small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: .05em;
+  color: #E6EBE3;
+}
+
+.am {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.am span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.am .sx {
+  font-size: 9px;
+  opacity: .85;
+}
+
+.paper {
+  position: relative;
+  margin: -104px 4px 0;
+  background: #fff;
+  border-radius: 18px 18px 0 0;
+  padding: 16px 16px 26px;
+  -webkit-mask: linear-gradient(#000 0 0) top/100% calc(100% - 6px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/12px 6px repeat-x;
+  mask: linear-gradient(#000 0 0) top/100% calc(100% - 6px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/12px 6px repeat-x;
+}
+
+.paper .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 9px;
+  color: #7B87A8;
+  padding: 8px 0;
+}
+
+.paper .row b {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  color: #0B0B0B;
+}
+
+.paper .cp {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+.paper .rw .cp {
+  margin-top: 14px;
+}
+
+.hx {
+  border-top: 1px solid #EEF0F3;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.hx b {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 3px;
+  overflow-wrap: anywhere;
+}
+
+.hx .rw+.rw {
+  margin-top: 0;
+}
+
+button.ok {
+  width: 100%;
+  gap: 8px;
+  border: 0;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  header {
+    top: calc(10vh - 58px);
+    margin: 16px 16px 0;
+  }
+  .nav-pill .logo .logo-text {
+    font-size: 18px;
+  }
+  .nav-pill .logo .logo-mark {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  .stage {
+    padding: 22px 14px 0;
+  }
+  .card {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  small.k {
+    font-size: 8px;
+  }
+  .rw b {
+    font-size: 9px;
+  }
+  .cp {
+    font-size: 10px;
+    margin-top: 14px;
+  }
+  .card {
+    padding: 0;
+  }
+  .sup {
+    font-size: 10px;
+    margin: 14px 0 12px;
+  }
+  .ok {
+    height: 40px;
+    font-size: 12px;
+  }
+  .card {
+    padding: 0;
+  }
+  .sh {
+    margin: 0 2px 12px;
+  }
+  .sh h1 {
+    font-size: 14px;
+    gap: 8px;
+  }
+  .x {
+    display: none;
+  }
+  .card {
+    padding: 0;
+  }
+  .x {
+    display: block;
+    color: #7B87A8;
+    font-size: 15px;
+  }
+  .x .d {
+    display: none;
+  }
+  .x .m {
+    display: inline;
+  }
+  .coin {
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
+  }
+  .hd {
+    border-radius: 16px;
+    padding: 12px 12px 80px;
+  }
+  .hd small {
+    font-size: 8px;
+  }
+  .am {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+  .paper {
+    margin: -80px 3px 0;
+    border-radius: 14px 14px 0 0;
+    padding: 12px 12px 22px;
+  }
+  .paper .row,.paper .row b {
+    font-size: 8px;
+  }
+  .hx b {
+    font-size: 8px;
+  }
+  button.ok {
+    margin-top: 10px;
+  }
+}
+</style>
+</head>
+<body class="flow">
+<header>
+  <div class="nav-pill">
+    <a href="#" class="logo">
+      <img src="../assets/gtb_logo_dark.png" alt="logo">
+    </a>
+    <nav class="main-nav">
+      <a href="swap.html">Exchange</a>
+      <a href="history.html">History</a>
+      <a href="#">Support</a>
+    </nav>
+  </div>
+  <div class="header-cta">
+    <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+    <button class="hamburger" onclick="openMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+<div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
+<aside class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <a href="swap.html">Exchange</a>
+  <a href="history.html">History</a>
+  <a href="#">Support</a>
+  <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+</aside>
+<main class="stage">
+  <div class="wrap">
+    <div class="sh">
+      <h1>Transaction Receipt</h1>
+      <a class="x" id="close" href="success.html">
+        <i class="fa-regular fa-circle-xmark d"></i>
+        <i class="fa-solid fa-xmark m"></i>
+      </a>
+    </div>
+    <section class="card">
+      <div class="hd">
+        <small>AMOUNT SWAPPED</small>
+        <div class="am">
+          <span id="aFrom"></span>
+          <i class="fa-solid fa-right-left sx"></i>
+          <span id="aTo"></span>
+        </div>
+      </div>
+      <div class="paper">
+        <div class="row">
+          <span>Exchange ID</span>
+          <b><span id="oid"></span>
+            <button type="button" class="cp">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </b>
+        </div>
+        <div class="row"><span>You sent</span><b id="sent"></b></div>
+        <div class="row"><span>You receive</span><b id="recv"></b></div>
+        <div class="row"><span>Date</span><b id="date"></b></div>
+        <div class="hx">
+          <div class="rw">
+            <div>
+              <small class="k">Deposit Transaction</small>
+              <b id="depV"></b>
+            </div>
+            <button type="button" class="cp">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+        <div class="hx">
+          <div class="rw">
+            <div>
+              <small class="k">Payout Transaction</small>
+              <b id="payV"></b>
+            </div>
+            <button type="button" class="cp">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+        <div class="hx">
+          <div class="rw">
+            <div><small class="k" id="recL"></small>
+              <b id="recV"></b>
+            </div>
+            <button type="button" class="cp">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="ok" id="share">
+        Share Receipt <i class="fa-solid fa-share-nodes"></i>
+      </button>
+      <a class="sup" href="#">Dispute Transaction</a>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <a class="logo light" href="#">
+      <img src="../assets/gtb_logo_light.png" alt="logo">
+    </a>
+    <nav class="footer-links">
+      <a href="../legal/legal.html#terms-of-service">Terms</a>
+      <a href="../legal/legal.html#privacy-policy">Privacy</a>
+      <a href="../legal/legal.html#kyc-aml">AML</a>
+    </nav>
+  </div>
+  <p class="copy">
+    &copy; 2026 Greatiby Digital Assets Exchange<span class="dash"> - </span><br class="mob-only">RC-1581814. All rights reserved.
+  </p>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const C={BTC:{p:67500,c:'#F7931A',i:'fa-brands fa-bitcoin'},ETH:{p:2496.69,c:'#1C1F3A',i:'fa-brands fa-ethereum'},USDT:{p:1,c:'#26A17B',i:'fa-solid fa-dollar-sign'},SOL:{p:150,c:'#8247E5',i:'fa-solid fa-s'},BNB:{p:600,c:'#F3BA2F',i:'fa-solid fa-b'}};
+const rate=(f,t)=>+(C[f].p/C[t].p).toPrecision(1); // 1 significant figure, same as swap.html
+const q=new URLSearchParams(location.search);
+const from=C[q.get('from')]?q.get('from'):'BTC', to=C[q.get('to')]&&q.get('to')!==from?q.get('to'):(from==='ETH'?'BTC':'ETH');
+const amt=parseFloat(q.get('amt'))||0.12567;
+const out=parseFloat(q.get('out'))||amt*rate(from,to);
+const outT=out.toLocaleString('en-US',{maximumFractionDigits:5});
+const SAMPLE='0xb8c77482c631bdd52er20xb8c77482c631bdd52er2'; // placeholder hash/address
+const d=new Date(),M=['Jan.','Feb.','Mar.','Apr.','May','Jun.','Jul.','Aug.','Sep.','Oct.','Nov.','Dec.'];
+const dateT=q.get('date')||`${M[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} at ${d.getHours()%12||12}:${String(d.getMinutes()).padStart(2,'0')} ${d.getHours()<12?'AM':'PM'}`;
+const order=q.get('order')||'QVroof78ur77', addr=q.get('addr')||SAMPLE;
+const coin=k=>`<span class="coin" style="--c:${C[k].c}"><i class="${C[k].i}"></i></span>`;
+$('aFrom').innerHTML=`${coin(from)}${amt} ${from}`;
+$('aTo').innerHTML=`${coin(to)}${outT} ${to}`;
+$('oid').textContent=order;
+$('sent').textContent=`${amt} ${from}`;
+$('recv').textContent=outT;
+$('date').textContent=dateT;
+$('depV').textContent=q.get('dep')||SAMPLE;
+$('payV').textContent=SAMPLE;
+$('recL').textContent=`Recipient’s ${to} address`;$('recV').textContent=addr;
+$('close').href='success.html?'+new URLSearchParams({from,to,amt,out,order,addr:q.get('addr')||'',dep:q.get('dep')||''});
+$('share').onclick=async()=>{
+  const b=$('share'),h=b.innerHTML,t=`Greatiby transaction receipt\nExchange ID: ${order}\nSent: ${amt} ${from}\nReceived: ${outT} ${to}\nDate: ${dateT}`;
+  try{
+    if(navigator.share){await navigator.share({title:'Transaction Receipt',text:t})}
+    else{await navigator.clipboard.writeText(t);b.innerHTML='Copied <i class="fa-solid fa-check"></i>';setTimeout(()=>b.innerHTML=h,1500)}
+  }catch(e){}
+};
+document.querySelectorAll('.cp').forEach(b=>b.onclick=async()=>{
+  const i=b.firstElementChild;
+  try{await navigator.clipboard.writeText($(b.dataset.v).textContent);i.className='fa-solid fa-check';setTimeout(()=>i.className='fa-regular fa-copy',1200)}catch(e){}
+});
+function openMenu(){$('mobileMenu').classList.add('open');$('overlay').classList.add('open')}
+function closeMenu(){$('mobileMenu').classList.remove('open');$('overlay').classList.remove('open')}
+</script>
+</body>
+</html>

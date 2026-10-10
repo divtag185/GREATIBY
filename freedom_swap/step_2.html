@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview Transaction | Freedom Swap by Greatiby</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/global_freedom_styles.css">
+<style>
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 20px 0;
+}
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  border-radius: 28px;
+  padding: 22px 16px 16px;
+}
+
+.st i {
+  display: none;
+  font-size: 11px;
+}
+
+.det {
+  position: relative;
+  overflow: hidden;
+  min-height: 132px;
+}
+
+.det h2 {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+small.k {
+  display: block;
+  font-size: 10px;
+  color: #7B87A8;
+}
+
+.det b {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 3px 0 12px;
+}
+
+.det b:last-child {
+  margin-bottom: 0;
+}
+
+.shield {
+  position: absolute;
+  right: -6px;
+  top: 12px;
+  width: 96px;
+  height: 100px;
+  pointer-events: none;
+}
+
+.shield .s {
+  font-size: 96px;
+  color: #D6ECCA;
+}
+
+.shield .c {
+  position: absolute;
+  left: 26px;
+  top: 32px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.shield .l {
+  position: absolute;
+  right: -8px;
+  bottom: 10px;
+  font-size: 28px;
+  color: #F6B656;
+}
+
+.agree {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.agree input {
+  accent-color: var(--g);
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.agree a {
+  color: var(--g);
+  font-weight: 600;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: var(--g);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background .2s;
+}
+
+.free {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 56px 0 64px;
+  font-size: 16px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  header {
+    top: calc(10vh - 58px);
+    margin: 16px 16px 0;
+  }
+  .nav-pill .logo .logo-text {
+    font-size: 18px;
+  }
+  .nav-pill .logo .logo-mark {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  .stage {
+    padding: 22px 14px 0;
+  }
+  .card {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  .ttl {
+    font-size: 14px;
+    margin: 0 2px 12px;
+    gap: 8px;
+  }
+  .ttl a {
+    font-size: 13px;
+  }
+  .cb {
+    background: #fff;
+    border: 0;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  .stepper {
+    background: none;
+    padding: 0 2px 4px;
+    margin-bottom: 10px;
+  }
+  .st {
+    width: 22px;
+    height: 22px;
+    font-size: 9px;
+  }
+  .st i {
+    font-size: 9px;
+  }
+  .st.done b {
+    display: none;
+  }
+  .st.done i {
+    display: inline;
+  }
+  .ln {
+    margin: 0 8px;
+  }
+  .det {
+    min-height: 96px;
+  }
+  .det h2 {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  small.k {
+    font-size: 8px;
+  }
+  .det b {
+    font-size: 10px;
+    margin: 2px 0 8px;
+  }
+  .shield {
+    right: -14px;
+    top: 6px;
+    width: 76px;
+    height: 80px;
+  }
+  .shield .s {
+    font-size: 76px;
+  }
+  .shield .c {
+    left: 20px;
+    top: 26px;
+    font-size: 24px;
+  }
+  .shield .l {
+    display: none;
+  }
+  .rw b {
+    font-size: 9px;
+  }
+  .cp {
+    font-size: 10px;
+    margin-top: 14px;
+  }
+  .agree {
+    font-size: 8px;
+    gap: 8px;
+  }
+  .agree input {
+    width: 12px;
+    height: 12px;
+  }
+  .submit {
+    height: 40px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .free {
+    margin: 18px 0 28px;
+    font-size: 11px;
+    gap: 8px;
+  }
+  .free .ico {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+}
+</style>
+</head>
+<body class="flow">
+<header>
+  <div class="nav-pill">
+    <a href="#" class="logo">
+      <img src="../assets/gtb_logo_dark.png" alt="logo">
+    </a>
+    <nav class="main-nav">
+      <a href="swap.html">Exchange</a>
+      <a href="history.html">History</a>
+      <a href="#">Support</a>
+    </nav>
+  </div>
+  <div class="header-cta">
+    <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+    <button class="hamburger" onclick="openMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+<div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
+<aside class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <a href="swap.html">Exchange</a>
+  <a href="history.html">History</a>
+  <a href="#">Support</a>
+  <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+</aside>
+<main class="stage">
+  <section class="card">
+    <h1 class="ttl"><a href="step_1.html" id="back"><i class="fa-solid fa-arrow-left"></i></a>Preview Transaction</h1>
+
+    <div class="cb stepper">
+      <span class="st done"><b>1</b><i class="fa-solid fa-check"></i></span><span class="ln"></span><span class="st cur">2</span><span class="ln"></span><span class="st">3</span><span class="ln"></span><span class="st">4</span>
+    </div>
+
+    <div class="cb det">
+      <h2>Confirm Details</h2>
+      <small class="k">You send</small><b id="send"></b>
+      <small class="k">You get</small><b id="get"></b>
+      <div class="shield">
+        <i class="fa-solid fa-shield s"></i>
+        <i class="fa-solid fa-check c"></i>
+        <i class="fa-solid fa-lock l"></i>
+      </div>
+    </div>
+
+    <div class="cb">
+      <div class="rw">
+        <div><small class="k" id="recL"></small><b id="recV"></b></div>
+        <button type="button" class="cp">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+      <div class="rw" id="refRow"><div>
+        <small class="k" id="refL"></small>
+        <b id="refV"></b></div>
+        <button type="button" class="cp">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="cb">
+      <label class="agree">
+        <input type="checkbox" id="agree">
+        <span>I have read and agree to the Greatiby 
+          <a href="../legal/legal.html#terms-of-service">Terms of Service</a><br>and 
+          <a href="../legal/legal.html#privacy-policy">Privacy Policy</a></span>
+        </label>
+      </div>
+
+    <button class="btn btn-primary submit" id="go" disabled>Confirm Transaction</button>
+  </section>
+  <div class="free">
+    <span class="ico">
+      <i class="fa-solid fa-arrow-up-arrow-down"></i>
+    </span>Freedom Swap by Greatiby
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <a class="logo light" href="#"><span class="logo-mark"><i class="fa-solid fa-g"></i></span><span class="logo-text">Greatiby</span></a>
+    <nav class="footer-links"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">AML</a></nav>
+  </div>
+  <p class="copy">
+    &copy; 2026 Greatiby Digital Assets Exchange<span class="dash"> - </span><br class="mob-only">RC-1581814. All rights reserved.
+  </p>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const C={BTC:{p:67500},ETH:{p:2496.69},USDT:{p:1},SOL:{p:150},BNB:{p:600}};
+const rate=(f,t)=>+(C[f].p/C[t].p).toPrecision(1); 
+const q=new URLSearchParams(location.search);
+const from=C[q.get('from')]?q.get('from'):'BTC', to=C[q.get('to')]&&q.get('to')!==from?q.get('to'):(from==='ETH'?'BTC':'ETH');
+const amt=parseFloat(q.get('amt'))||0.12567;
+const out=parseFloat(q.get('out'))||amt*rate(from,to);
+const SAMPLE='0xb8c77482c631bdd52er20xb8c77482c631bdd52er2';
+const addr=q.get('addr')||SAMPLE, refund=q.has('addr')?q.get('refund'):SAMPLE;
+$('send').textContent=`${amt} ${from}`;
+$('get').textContent='≈'+out.toLocaleString('en-US',{maximumFractionDigits:5});
+$('recL').textContent=`Recipient’s ${to} address`;$('recV').textContent=addr;
+$('refL').textContent=`Refund ${from} address`;$('refV').textContent=refund||'';
+if(!refund)$('refRow').style.display='none';
+$('back').href='step_1.html?'+new URLSearchParams({from,to,amt});
+document.querySelectorAll('.cp').forEach(b=>b.onclick=async()=>{
+  const i=b.firstElementChild;
+  try{await navigator.clipboard.writeText($(b.dataset.v).textContent);i.className='fa-solid fa-check';setTimeout(()=>i.className='fa-regular fa-copy',1200)}catch(e){}
+});
+$('agree').onchange=e=>{$('go').disabled=!e.target.checked};
+$('go').onclick=()=>{location.href='step_3.html?'+new URLSearchParams({from,to,amt,out,addr,refund:refund||'',email:q.get('email')||''})};
+function openMenu(){$('mobileMenu').classList.add('open');$('overlay').classList.add('open')}
+function closeMenu(){$('mobileMenu').classList.remove('open');$('overlay').classList.remove('open')}
+</script>
+</body>
+</html>

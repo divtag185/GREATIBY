@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Successful | Freedom Swap by Greatiby</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/global_freedom_styles.css">
+<style>
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 20px 0;
+}
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  border-radius: 28px;
+  padding: 22px 16px 16px;
+} 
+
+small.k {
+  display: block;
+  font-size: 10px;
+  color: #7B87A8;
+}
+
+.free {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 56px 0 64px;
+  font-size: 16px;
+  color: #333;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 540px;
+}
+
+.card {
+  padding: 16px;
+}
+
+.cb b.v {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 3px;
+  overflow-wrap: anywhere;
+}
+
+.ok {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border-radius: 999px;
+  background: #5F705C;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background .2s;
+}
+
+.ok:hover {
+  background: var(--gd);
+}
+
+.card {
+  padding: 28px 16px 16px;
+}
+
+.sh h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.bk {
+  display: none;
+  color: var(--g);
+  font-size: 13px;
+}
+
+.x {
+  font-size: 17px;
+  color: #111;
+}
+
+.hero {
+  text-align: center;
+}
+
+.tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(180deg,#5FE08A,#22C55E);
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.hero h2 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 11px;
+  color: #7B87A8;
+  max-width: 200px;
+  margin: 4px auto 26px;
+}
+
+.tr {
+  padding: 14px 16px;
+}
+
+.tr h3 {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.tr .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  color: #7B87A8;
+  padding: 5px 0;
+}
+
+.tr .row b {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #0B0B0B;
+}
+
+.tr .cp {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+.sv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: #7B87A8;
+  margin: 4px 4px 16px;
+}
+
+.sw {
+  position: relative;
+  width: 24px;
+  height: 14px;
+  border-radius: 99px;
+  background: #CBD0D8;
+  flex: none;
+  transition: background .2s;
+}
+
+.sw::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform .2s;
+}
+
+.sw.on {
+  background: var(--g);
+}
+
+.sw.on::after {
+  transform: translateX(10px);
+}
+
+.ne {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--g);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background .2s;
+}
+
+.ne:hover {
+  background: #F7F8F6;
+}
+
+@media (max-width: 768px) {
+  header {
+    top: calc(10vh - 58px);
+    margin: 16px 16px 0;
+  }
+  .nav-pill .logo .logo-text {
+    font-size: 18px;
+  }
+  .nav-pill .logo .logo-mark {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  .stage {
+    padding: 22px 14px 0;
+  }
+  .card {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  .cb {
+    background: #fff;
+    border: 0;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  small.k {
+    font-size: 8px;
+  }
+  .cp {
+    font-size: 10px;
+    margin-top: 14px;
+  }
+  .free {
+    margin: 18px 0 28px;
+    font-size: 11px;
+    gap: 8px;
+  }
+  .free .ico {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+  .card {
+    padding: 0;
+  }
+  .cb b.v {
+    font-size: 9px;
+  }
+  .ok {
+    height: 40px;
+    font-size: 12px;
+  }
+  .card {
+    padding: 0;
+  }
+  .sh {
+    margin: 0 2px 12px;
+  }
+  .sh h1 {
+    font-size: 14px;
+    gap: 8px;
+  }
+  .bk {
+    display: inline;
+  }
+  .x {
+    display: none;
+  }
+  .tick {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .hero h2 {
+    font-size: 12px;
+  }
+  .hero p {
+    font-size: 9px;
+    max-width: 190px;
+    margin-bottom: 12px;
+  }
+  .tr {
+    padding: 12px;
+  }
+  .tr h3 {
+    font-size: 10px;
+  }
+  .tr .row,.tr .row b,.tr .cp {
+    font-size: 9px;
+  }
+  .sv {
+    font-size: 8px;
+    margin: 2px 2px 24px;
+  }
+  .ne {
+    height: 40px;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+}
+</style>
+</head>
+<body class="flow">
+<header>
+  <div class="nav-pill">
+    <a href="#" class="logo">
+      <img src="../assets/gtb_logo_dark.png" alt="logo">
+    </a>
+    <nav class="main-nav">
+      <a href="swap.html">Exchange</a>
+      <a href="history.html">History</a>
+      <a href="#">Support</a></nav>
+  </div>
+  <div class="header-cta">
+    <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+    <button class="hamburger" onclick="openMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+<div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
+<aside class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <a href="swap.html">Exchange</a>
+  <a href="history.html">History</a>
+  <a href="#">Support</a>
+  <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+</aside>
+<main class="stage">
+  <div class="wrap">
+    <div class="sh">
+      <h1>
+        <a class="bk" href="swap.html">
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>Successful
+      </h1>
+      <a class="x" href="swap.html">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </a>
+    </div>
+    <section class="card">
+      <div class="hero">
+        <span class="tick">
+          <i class="fa-solid fa-check"></i>
+        </span>
+        <h2>Exchange Completed</h2>
+        <p>Your exchange has been successfully completed.</p>
+      </div>
+      <div class="cb tr">
+        <h3>Transaction Details</h3>
+        <div class="row">
+          <span>Exchange ID</span>
+          <b>
+            <span id="oid"></span>
+            <button type="button" class="cp">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </b>
+        </div>
+        <div class="row"><span>You sent</span><b id="sent"></b></div>
+        <div class="row"><span>You receive</span><b id="recv"></b></div>
+        <div class="row"><span>Date</span><b id="date"></b></div>
+      </div>
+      <div class="sv">
+        <span id="svL">Save Beneficiary</span>
+        <button type="button" class="sw" id="sw"></button>
+      </div>
+      <a class="ok" id="view" href="receipt.html">View Transaction Details</a>
+      <a class="ne" href="swap.html">New Exchange 
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </section>
+  </div>
+  <div class="free">
+    <span class="ico">
+      <i class="fa-solid fa-arrow-up-arrow-down"></i>
+    </span>Freedom Swap by Greatiby
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <a class="logo light" href="#">
+      <img src="../assets/gtb_logo_light.png" alt="logo">
+    </a>
+    <nav class="footer-links">
+      <a href="../legal/legal.html#terms-of-service">Terms</a>
+      <a href="../legal/legal.html#privacy-policy">Privacy</a>
+      <a href="../legal/legal.html#kyc-aml">AML</a>
+    </nav>
+  </div>
+  <p class="copy">
+    &copy; 2026 Greatiby Digital Assets Exchange<span class="dash"> - </span><br class="mob-only">RC-1581814. All rights reserved.
+  </p>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const C={BTC:67500,ETH:2496.69,USDT:1,SOL:150,BNB:600};
+const rate=(f,t)=>+(C[f]/C[t]).toPrecision(1); 
+const q=new URLSearchParams(location.search);
+const from=C[q.get('from')]?q.get('from'):'BTC', to=C[q.get('to')]&&q.get('to')!==from?q.get('to'):(from==='ETH'?'BTC':'ETH');
+const amt=parseFloat(q.get('amt'))||0.12567;
+const out=parseFloat(q.get('out'))||amt*rate(from,to);
+$('oid').textContent=q.get('order')||'QVroof78ur77';
+$('sent').textContent=`${amt} ${from}`;
+$('recv').textContent=out.toLocaleString('en-US',{maximumFractionDigits:5});
+const d=new Date(),M=['Jan.','Feb.','Mar.','Apr.','May','Jun.','Jul.','Aug.','Sep.','Oct.','Nov.','Dec.'];
+const h=d.getHours()%12||12,mi=String(d.getMinutes()).padStart(2,'0');
+$('date').textContent=`${M[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} at ${h}:${mi} ${d.getHours()<12?'AM':'PM'}`;
+$('view').href='receipt.html?'+new URLSearchParams({from,to,amt,out,order:$('oid').textContent,addr:q.get('addr')||'',dep:q.get('dep')||'',date:$('date').textContent});
+try{const k='greatibyHistory',h=JSON.parse(localStorage.getItem(k)||'[]'),id=$('oid').textContent;if(!h.some(x=>x.id===id)){h.unshift({id,from,to,amt:String(amt),out:String(+out.toFixed(5)),d:$('date').textContent.split(' at ')[0],s:'Completed'});localStorage.setItem(k,JSON.stringify(h))}}catch(e){}
+$('sw').onclick=e=>{const b=e.currentTarget;b.classList.toggle('on')};
+document.querySelectorAll('.cp').forEach(b=>b.onclick=async()=>{
+  const i=b.firstElementChild;
+  try{await navigator.clipboard.writeText($(b.dataset.v).textContent);i.className='fa-solid fa-check';setTimeout(()=>i.className='fa-regular fa-copy',1200)}catch(e){}
+});
+function openMenu(){$('mobileMenu').classList.add('open');$('overlay').classList.add('open')}
+function closeMenu(){$('mobileMenu').classList.remove('open');$('overlay').classList.remove('open')}
+</script>
+</body>
+</html>

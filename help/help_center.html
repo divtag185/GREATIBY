@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greatiby — Help Centre FAQs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="help_styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-pill">
+    <div class="logo"><img src="../assets/gtb_logo_light.png" alt="logo"></div>
+    <nav class="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../about/about.html">About Us</a>
+      <a href="#" class="current">Help Center</a>
+      <a href="../blog/blog_page.html">Blog</a>
+      <a href="../contact/contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="header-cta">
+    <a href="../freedom_swap/freedom_swap.html" class="btn btn-primary">Freedom Swap</a>
+    <button class="hamburger" onclick="openMenu()"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></button>
+  <a href="../index.html" onclick="closeMenu()">Home</a>
+  <a href="../about/about.html" onclick="closeMenu()">About Us</a>
+  <a href="#" onclick="closeMenu()">Help Center</a>
+  <a href="../blog/blog_page.html" onclick="closeMenu()">Blog</a>
+  <a href="../contact/contact.html" onclick="closeMenu()">Contact</a>
+  <a href="../freedom_swap/freedom_swap.html" class="btn btn-primary" style="margin-top:20px;">Freedom Swap</a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="eyebrow">
+      <img src="../assets/greatiby_small.png" alt="logo_img"> HELP CENTRE
+    </span>
+    <h1>Frequently Asked Questions &amp; Answers</h1>
+    <p>Have questions about crypto trading, swaps, DEX exchanges, or your transactions? Find simple answers to the most common questions about using Greatiby.</p>
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search for a question...">
+      <button class="btn-search">Search</button>
+    </div>
+  </div>
+</section>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="greatiby">Greatiby FAQs</button>
+    <button class="tab-btn" data-tab="freedom">Freedom Swap FAQs</button>
+  </div>
+</div>
+
+<section class="faq-section">
+  <div class="faq-list" id="faq-list">
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How fast are swaps processed?</span>
+        <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Swaps are typically processed in under 30 seconds.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>What fees are associated with swaps?</span>
+        <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Swapping involves a fee of 0.5% of the transaction amount.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Are swaps reversible?</span>
+        <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">No, swaps are permanent and cannot be undone.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>What tokens can I swap?</span>
+        <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Greatiby supports swaps across all major tokens available on the platform, with more added regularly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Still have a question?</h2>
+  <p>Don't leave without clarification. Our<br class="br-mobile"> team are<br class="br-desktop"> always here to help</p>
+  <button class="btn-contact">Contact Support <i class="fa-regular fa-comment-dots"></i></button>
+</section>
+
+<footer>
+<svg class="footer-bg" viewBox="0 0 1897 1053" preserveAspectRatio="xMidYMid slice" focusable="false">
+<rect width="1897" height="1053" fill="#030303"/>
+<rect x="-155.4" y="-23.8" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="160" y="-23.8" width="316.2" height="316.2" fill="#060805"/>
+<rect x="475.4" y="-23.8" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="790.8" y="-23.8" width="316.2" height="316.2" fill="#060805"/>
+<rect x="1106.2" y="-23.8" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="1421.6" y="-23.8" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="1737" y="-23.8" width="316.2" height="316.2" fill="#060805"/>
+<rect x="-155.4" y="291.6" width="316.2" height="316.2" fill="#030303"/>
+<rect x="160" y="291.6" width="316.2" height="316.2" fill="#030303"/>
+<rect x="475.4" y="291.6" width="316.2" height="316.2" fill="#060805"/>
+<rect x="790.8" y="291.6" width="316.2" height="316.2" fill="#060805"/>
+<rect x="1106.2" y="291.6" width="316.2" height="316.2" fill="#030303"/>
+<rect x="1421.6" y="291.6" width="316.2" height="316.2" fill="#030303"/>
+<rect x="1737" y="291.6" width="316.2" height="316.2" fill="#060805"/>
+<rect x="-155.4" y="607" width="316.2" height="316.2" fill="#030303"/>
+<rect x="160" y="607" width="316.2" height="316.2" fill="#030303"/>
+<rect x="475.4" y="607" width="316.2" height="316.2" fill="#060805"/>
+<rect x="790.8" y="607" width="316.2" height="316.2" fill="#030303"/>
+<rect x="1106.2" y="607" width="316.2" height="316.2" fill="#030303"/>
+<rect x="1421.6" y="607" width="316.2" height="316.2" fill="#060805"/>
+<rect x="1737" y="607" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="-155.4" y="922.4" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="160" y="922.4" width="316.2" height="316.2" fill="#060805"/>
+<rect x="475.4" y="922.4" width="316.2" height="316.2" fill="#060805"/>
+<rect x="790.8" y="922.4" width="316.2" height="316.2" fill="#030303"/>
+<rect x="1106.2" y="922.4" width="316.2" height="316.2" fill="#060805"/>
+<rect x="1421.6" y="922.4" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="1737" y="922.4" width="316.2" height="316.2" fill="#0b0d0a"/>
+<path d="M-155 292V134.3A157.7 157.7 0 0 1 160.4 134.3V292Z" fill="#030303" stroke="#030303" stroke-width=".6"/>
+<path d="M1106.6 -23.4V292A315.4 315.4 0 0 1 791.2 -23.4Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+<path d="M1106.6 -23.4H1422A315.4 315.4 0 0 1 1106.6 292Z" fill="#030303" stroke="#030303" stroke-width=".6"/>
+<path d="M1422 292V134.3A157.7 157.7 0 0 1 1737.4 134.3V292Z" fill="#030303" stroke="#030303" stroke-width=".6"/>
+<path d="M475.8 292V607.4A315.4 315.4 0 0 1 160.4 292Z" fill="#060805" stroke="#060805" stroke-width=".6"/>
+<path d="M475.8 292H791.2A315.4 315.4 0 0 1 475.8 607.4Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+<path d="M791.2 607.4V449.7A157.7 157.7 0 0 1 1106.6 449.7V607.4Z" fill="#030303" stroke="#030303" stroke-width=".6"/>
+<path d="M1106.6 292V449.7A157.7 157.7 0 0 0 1422 449.7V292Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+<path d="M1422 607.4A157.7 157.7 0 0 1 1737.4 607.4Z" fill="#060805" stroke="#060805" stroke-width=".6"/>
+<path d="M-155 922.8V765.1A157.7 157.7 0 0 1 160.4 765.1V922.8Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+<path d="M475.8 922.8H160.4A315.4 315.4 0 0 1 475.8 607.4Z" fill="#060805" stroke="#060805" stroke-width=".6"/>
+<path d="M1422 922.8H1106.6A315.4 315.4 0 0 1 1422 607.4Z" fill="#060805" stroke="#060805" stroke-width=".6"/>
+<path d="M1422 922.8V607.4A315.4 315.4 0 0 1 1737.4 922.8Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+<path d="M1737.4 607.4A157.7 157.7 0 0 0 2052.8 607.4Z" fill="#060805" stroke="#060805" stroke-width=".6"/>
+<path d="M475.8 1238.2V1080.5A157.7 157.7 0 0 1 791.2 1080.5V1238.2Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+</svg>
+  <div class="wrap footer-cta">
+    <h2>Smarter Crypto Trading,<br>Right at Your Fingertips</h2>
+    <div class="store-buttons">
+      <a href="#" class="store-btn filled"><i class="fa-brands fa-apple"></i> Get on iPhone</a>
+      <a href="#" class="store-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" alt="Google Play" class="store-icon-svg" loading="lazy"> Get on Android</a>
+    </div>
+  </div>
+  <div class="wrap footer-cols">
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="../assets/gtb_logo_light.png" alt="logo">
+      </div>
+      <p>Join over 200,000 people who trade with GreatIBY Crypto App</p>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="#">Download iOS</a></li>
+        <li><a href="#">Download Android</a></li>
+        <li><a href="../freedom_swap/freedom_swap.html">Freedom Swap</a></li>
+        <li><a href="../help/help_center.html">FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="../about/about.html">About Us</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
+        <li><a href="../blog/blog_page.html">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Legals</h5>
+      <ul>
+        <li><a href="../legal/legal.html#privacy-policy">Privacy Policy</a></li>
+        <li><a href="../legal/legal.html#terms-of-service">Terms of Use</a></li>
+        <li><a href="../legal/legal.html#kyc-aml">AML</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Mobile-only: brand block relocated here, between the legal links and copyright -->
+  <div class="wrap footer-brand-mobile">
+    <div class="logo">
+      <img src="../assets/gtb_logo_light.png" alt="logo">
+    </div>
+    <p>Join over 200,000 people who trade with GreatIBY Crypto App</p>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>&copy; <span id="currentYear">2026</span>, GREATIBY LIMITED RC-1581814</span>
+    <div class="footer-social">
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="help_script.js"></script>
+</body>
+</html>

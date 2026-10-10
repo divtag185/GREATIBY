@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greatiby — Nigeria's Trusted Platform for Instant Crypto to Naira Payments</title>
+<meta name="description" content="Buy, sell, swap, and manage your cryptocurrency in one secure platform. Enjoy competitive rates, instant bank payouts, virtual dollar cards, and reliable support trusted by thousands of Nigerians.">
+
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<link rel="stylesheet" href="home_styles.css">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce" id="announceBar">
+  <img src="assets/Group.webp" alt="bullhorn_img">
+  <span><strong>Exciting News!</strong> Enjoy lower swap fees all week long. Swap now and save more!</span>
+  <a href="freedom_swap/freedom_swap.html" target="_self" style="font-weight: bolder; color: #587C52;">
+    <i class="fa-solid fa-chevron-right"></i>
+  </a>
+  <button class="a-close" onclick="document.getElementById('announceBar').classList.add('hidden')">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="nav-pill">
+    <div class="logo"><img src="assets/gtb_logo_dark.png" alt="greatiby_logo"></div>
+    <nav class="main-nav">
+      <a href="#" class="current">Home</a>
+      <a href="about/about.html">About Us</a>
+      <a href="help/help_center.html">Help Center</a>
+      <a href="blog/blog_page.html">Blog</a>
+      <a href="contact/contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="header-cta">
+    <a href="freedom_swap/freedom_swap.html" class="btn btn-primary">
+      Freedom Swap
+    </a>
+    <button class="hamburger" onclick="openMenu()"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></button>
+  <a href="#" onclick="closeMenu()">Home</a>
+  <a href="about/about.html" onclick="closeMenu()">About Us</a>
+  <a href="help/help_center.html" onclick="closeMenu()">Help Center</a>
+  <a href="blog/blog_page.html" onclick="closeMenu()">Blog</a>
+  <a href="contact/contact.html" onclick="closeMenu()">Contact</a>
+  <a href="freedom_swap/freedom_swap.html" class="btn btn-primary" style="margin-top:20px; color: #FFF">Freedom Swap</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div>
+      <h1><span class="hero-line">Nigeria's Trusted Platform</span><br><span class="hero-line">for Instant Crypto to Naira</span><br><span class="hero-line">Payments</span></h1>
+      <p class="lead">Buy, sell, swap, and manage your cryptocurrency in one secure platform. Enjoy competitive rates, instant bank payouts, virtual dollar cards, and reliable support trusted by thousands of Nigerians.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary">Download App <svg class="cloud-download-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 18a4.5 4.5 0 0 1-.82-8.93A5.5 5.5 0 0 1 17.5 8.5a4.5 4.5 0 0 1 .5 8.98"/><path d="M12 11v7"/><path d="m9 15 3 3 3-3"/></svg></button>
+        <button class="btn btn-outline"><i class="fa-solid fa-arrows-rotate"></i> Dex Exchange</button>
+      </div>
+      <div class="users-row">
+        <div class="avatar-stack">
+          <img src="https://i.pravatar.cc/80?img=12" alt="user">
+          <img src="https://i.pravatar.cc/80?img=32" alt="user">
+          <img src="https://i.pravatar.cc/80?img=15" alt="user">
+          <span class="count-badge">50K+</span>
+        </div>
+        <span class="label">Active users</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="device-group hero-device">
+        <img class="device-phone" src="assets/phone_floating.webp" width="440" height="706" alt="Greatiby app home screen showing wallet balance and quick actions">
+        <div class="device-qr">
+          <img src="assets/Scan_QR_Green.png" width="234" height="234" alt="QR code to download the Greatiby app">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Floating stats card -->
+<div class="wrap">
+  <div class="stats-row">
+    <div class="stat-card"><h3>99.9%</h3><p>Uptime</p></div>
+    <div class="stat-card"><h3>$2M+</h3><p>Total Payout</p></div>
+    <div class="stat-card"><h3>30k+</h3><p>Customers</p></div>
+  </div>
+</div>
+
+<!-- Where Crypto Meets Greatness -->
+<div class="wrap after-stats">
+  <div class="center-head">
+    <span class="eyebrow-pill">
+      <img src="assets/greatiby_small.png" alt="logo"> Welcome to Greatiby</span>
+    <h2>Where Crypto <span class="accent">Meets</span><br>Greatness...</h2>
+  </div>
+  <div class="team-photo">
+    <img src="assets/meeting.webp" alt="Greatiby team meeting" loading="lazy">
+  </div>
+
+  <!-- Turn crypto section -->
+  <div class="split-head">
+    <h2>Turn Crypto to Naira. <span class="accent">Fast,<br>Secure,</span> and Simple.</h2>
+    <p class="sub">Fast payments &middot; Competitive rates &middot; Secure transactions</p>
+  </div>
+
+  <div class="crypto-flow">
+    <div class="flow-phone-wrap">
+      <div class="device-group flow-device">
+        <img class="device-phone" src="assets/phone_static.webp" width="500" height="759" alt="Greatiby wallet screen showing a Naira balance">
+        <div class="device-qr">
+          <img src="assets/qr_3.png" width="234" height="234" alt="QR code to download the Greatiby app">
+        </div>
+      </div>
+    </div>
+    <div class="flow-right">
+      <h3>Crypto <span class="accent">trading,</span> with no stress</h3>
+      <p>Getting your money out of crypto shouldn't be<br>complicated. Greatiby makes crypto-to-Naira<br>transactions simple, transparent, and reliable<br>from start to finish.</p>
+      <ul class="check-grid">
+        <li><i class="fa-solid fa-check"></i> Crypto Exchange</li>
+        <li><i class="fa-solid fa-check"></i> Fiat Conversion</li>
+        <li><i class="fa-solid fa-check"></i> Buy Crypto</li>
+        <li><i class="fa-solid fa-check"></i> Dex Exchange</li>
+        <li><i class="fa-solid fa-check"></i> Sell Crypto</li>
+        <li><i class="fa-solid fa-check"></i> Bills Payment</li>
+        <li><i class="fa-solid fa-check"></i> Crypto Swap</li>
+        <li><i class="fa-solid fa-check"></i> Virtual Card</li>
+      </ul>
+      <div class="built-around">
+        <h4>Greatiby is Built around what matters to you.</h4>
+        <p>Whether you're trading occasionally or managing digital assets regularly, Greatiby gives you a dependable way to move between crypto and Naira.</p>
+      </div>
+      <a href="#about" class="learn-more"><i class="fa-solid fa-chevron-right"></i> Learn more about us</a>
+    </div>
+  </div>
+</div>
+
+<!-- Dark platforms section -->
+<div class="dark-section">
+  <div class="dark-pin">
+  <div class="wrap">
+    <h2>Why Use Multiple Platforms When <span class="accent">Greatiby</span> Brings It All Together?</h2>
+    <div class="feature-cards">
+      <div class="fcard">
+        <div class="fcard-bottom">
+          <span class="fb-icon"><i class="fa-solid fa-coins"></i></span>
+          <span class="fb-text">Trade Crypto<small>Buy, Sell and Swap Crypto</small></span>
+          <a class="fb-btn">Trade</a>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fcard-bottom">
+          <span class="fb-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></span>
+          <span class="fb-text">Send &amp; Receive<small>Spend Crypto seamlessly</small></span>
+          <a class="fb-btn">Spend</a>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fcard-bottom">
+          <span class="fb-icon"><i class="fa-solid fa-gear"></i></span>
+          <span class="fb-text">Freedom Swap (DEX)<small>Swap Crypto with no KYC</small></span>
+          <a href="freedom_swap/freedom_swap.html" target="_self" class="fb-btn">Swap</a>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fcard-bottom">
+          <span class="fb-icon"><i class="fa-solid fa-credit-card"></i></span>
+          <span class="fb-text">Virtual Card<small>Shop &amp; Pay Anywhere Securely</small></span>
+          <a class="fb-btn">Use</a>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fcard-bottom">
+          <span class="fb-icon"><i class="fa-solid fa-receipt"></i></span>
+          <span class="fb-text">Pay all bills<small>Settle Bills in Seconds</small></span>
+          <a class="fb-btn">Pay</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="band-grey">
+  <div class="wrap">
+    <!-- Market rates -->
+    <div class="market-head">
+      <span class="eyebrow-pill">
+        <img src="assets/greatiby_small.png" alt="logo"> Greatiby Crypto Exchange Rates
+      </span>
+      <h2 style="font-size:30px;font-weight:800;margin-top:16px;">Stay Ahead of the<br>Market</h2>
+    </div>
+  <div class="tabs">
+    <button class="active" data-tab="buy">Buy Rates</button>
+    <button data-tab="sell">Sell Rates</button>
+    <button data-tab="price">Crypto Price</button>
+  </div>
+  <div class="market-grid">
+    <!-- Live crypto-to-Naira rates  -->
+    <div class="coin-card" id="liveCoinCard">
+      <div class="coin-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="coinSearchInput" placeholder="Search coin name" autocomplete="off">
+      </div>
+      <div class="coin-row" data-symbol="BTC">
+        <div class="coin-left"><span class="coin-icon btc"><i class="fa-brands fa-bitcoin"></i></span><div><div class="coin-name">Bitcoin</div><div class="coin-sym">BTC</div></div></div>
+        <div class="coin-price">Loading&hellip;</div>
+      </div>
+      <div class="coin-row" data-symbol="ETH">
+        <div class="coin-left"><span class="coin-icon eth"><i class="fa-brands fa-ethereum"></i></span><div><div class="coin-name">Ethereum</div><div class="coin-sym">ETH</div></div></div>
+        <div class="coin-price">Loading&hellip;</div>
+      </div>
+      <div class="coin-row" data-symbol="SOL">
+        <div class="coin-left"><span class="coin-icon sol"><i class="fa-solid fa-s"></i></span><div><div class="coin-name">Solana</div><div class="coin-sym">SOL</div></div></div>
+        <div class="coin-price">Loading&hellip;</div>
+      </div>
+      <div class="coin-row" data-symbol="USDT">
+        <div class="coin-left"><span class="coin-icon usdt"><i class="fa-solid fa-dollar-sign"></i></span><div><div class="coin-name">Tether</div><div class="coin-sym">USDT</div></div></div>
+        <div class="coin-price">Loading&hellip;</div>
+      </div>
+      <div class="coin-row" data-symbol="BNB">
+        <div class="coin-left"><span class="coin-icon bnb"><i class="fa-solid fa-b"></i></span><div><div class="coin-name">BNB</div><div class="coin-sym">BNB</div></div></div>
+        <div class="coin-price">Loading&hellip;</div>
+      </div>
+      <div class="coin-row" data-symbol="XRP">
+        <div class="coin-left"><span class="coin-icon xrp"><i class="fa-solid fa-x"></i></span><div><div class="coin-name">XRP</div><div class="coin-sym">XRP</div></div></div>
+        <div class="coin-price">Loading&hellip;</div>
+      </div>
+      <div class="coin-empty" id="coinEmpty" hidden></div>
+      <div class="coin-updated">Last updated: <strong id="coinUpdatedTime">Just now</strong></div>
+    </div>
+
+    <!-- Live indices/futures/bonds terminal -->
+    <div class="terminal-card">
+      <table id="marketTable">
+        <tr><th></th><th>Price</th><th>Chg</th><th>Chg %</th><th>Open</th><th>High</th></tr>
+        <tr class="section-row"><td colspan="6">INDICES</td></tr>
+        <tr data-symbol="^GSPC"><td>US SP 500 CFD</td><td class="val-price down">7,683.50</td><td class="val-chg down">-59.72</td><td class="val-chgpct down">-0.77%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr data-symbol="^NDX"><td>US Tech 100 CFD</td><td class="val-price down">30,319.06</td><td class="val-chg down">-331.32</td><td class="val-chgpct down">-1.08%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr data-symbol="^DJI"><td>Wall Street CFD</td><td class="val-price down">51,448.02</td><td class="val-chg down">-347.11</td><td class="val-chgpct down">-0.67%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr data-symbol="^N225"><td>Japan 225</td><td class="val-price down">65,625</td><td class="val-chg down">-253</td><td class="val-chgpct down">-0.38%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr data-symbol="^GDAXI"><td>DAX Performance-Index</td><td class="val-price up">25,467</td><td class="val-chg up">+93</td><td class="val-chgpct up">+0.36%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr data-symbol="^FTSE"><td>UK 100 CFD</td><td class="val-price up">10,724</td><td class="val-chg up">+39</td><td class="val-chgpct up">+0.36%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr class="section-row"><td colspan="6">FUTURES</td></tr>
+        <tr data-symbol="ES=F"><td>S&amp;P 500 Index Futures</td><td class="val-price">&mdash;</td><td class="val-chg">&mdash;</td><td class="val-chgpct">&mdash;</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr data-symbol="6E=F"><td>Euro Futures</td><td class="val-price down">1.13482</td><td class="val-chg down">-0.0023</td><td class="val-chgpct down">-0.20%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr data-symbol="GC=F"><td>Gold - Cash</td><td class="val-price up">4,141.79</td><td class="val-chg up">+26.81</td><td class="val-chgpct up">+0.65%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr data-symbol="CL=F"><td>WTI CRUDE OIL</td><td class="val-price up">93.32</td><td class="val-chg up">+0.72</td><td class="val-chgpct up">+0.77%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr data-symbol="ZC=F"><td>Cash Settled Corn</td><td class="val-price down">522.25</td><td class="val-chg down">-6.02</td><td class="val-chgpct down">-1.14%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr class="section-row"><td colspan="6">BONDS</td></tr>
+        <tr data-symbol="ZN=F"><td>US 10-Yr Note Futures</td><td class="val-price down">104.359</td><td class="val-chg down">-0.125</td><td class="val-chgpct down">-0.12%</td><td class="val-open">104.469</td><td class="val-high">104.578</td></tr>
+        <tr data-symbol="ZB=F"><td>US 30-Yr Bond Futures</td><td class="val-price">&mdash;</td><td class="val-chg">&mdash;</td><td class="val-chgpct">&mdash;</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+        <tr data-symbol="^TNX"><td>US 10-Yr Treasury Yield</td><td class="val-price down">5.233</td><td class="val-chg down">-0.011</td><td class="val-chgpct down">-0.21%</td><td class="val-open">&mdash;</td><td class="val-high">&mdash;</td></tr>
+      </table>
+    </div>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <!-- Video story -->
+  <div class="video-head">
+    <span class="eyebrow-pill">
+      <img src="assets/greatiby_small.png" alt="logo"> Want to know what makes us different?</span>
+    <h2 style="font-size:30px;font-weight:800;margin-top:16px;">Hear the Story Behind Greatiby</h2>
+  </div>
+  <div class="video-wrap">
+    <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+  </div>
+</div>
+
+<!-- Trust and Integrity -->
+<div class="trust-section">
+<div class="trust-pin">
+<div class="wrap">
+  <div class="trust-head">
+    <h2>Trust and Integrity</h2>
+    <p>For Greatiby, Trust and Integrity are at the heart of what we are building.</p>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <div class="tc-visual"></div>
+      <div class="tc-body">
+        <h4><i class="fa-solid fa-handshake"></i> Trust</h4>
+        <p>Trust means our users should feel confident using Greatiby with their money and digital assets. We want them to know that security, transparency, reliability and the protection of their information come first.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <div class="tc-visual"></div>
+      <div class="tc-body">
+        <h4><i class="fa-solid fa-scale-balanced"></i> Integrity</h4>
+        <p>Integrity means doing the right thing even when nobody is watching. We want to be transparent about our rates, fees and processes, avoid hidden charges, and always treat users fairly.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <div class="tc-visual"></div>
+      <div class="tc-body">
+        <h4><i class="fa-solid fa-certificate"></i> GreatIBY</h4>
+        <p>Greatiby isn't just about making crypto transactions fast and easy. We want to build a platform people can trust with their money, recommend to their family and friends, and confidently use every day.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<div class="band-grey"><div class="wrap">
+
+  <!-- Testimonials -->
+  <div class="testi-head">
+    <h2>
+      <span class="nowrap-mobile">Join over 200,000 people</span><br>who trade with us
+    </h2>
+    <p>
+      Review from thousands of our app users on<br class="br-mobile"> Google Play<br class="br-desktop"> and App Store.
+    </p>
+  </div>
+  <div class="testi-scroll">
+    <div class="testi-card">
+      <i class="fa-solid fa-quote-left quote"></i>
+      <h4>I find Greatiby app Easy and functional interface to use.</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur ere. Augue id id etiam vulputate tortor ew esfggtywi maecenas. Egestas sem porta non dignissr...
+      </p>
+      <div class="testi-person"><img src="https://i.pravatar.cc/60?img=13" alt="Hammed Timothy" loading="lazy"><div><div class="tp-name">Hammed Timothy</div><div class="tp-role">UX Designer</div></div></div>
+    </div>
+    <div class="testi-card">
+      <i class="fa-solid fa-quote-left quote"></i>
+      <h4>Greatiby integrates seamlessly with my existing tools.</h4>
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Eos ut ratione voluptatem sequi nesciunt.
+      </p>
+      <div class="testi-person"><img src="https://i.pravatar.cc/60?img=47" alt="Alice Johnson" loading="lazy"><div><div class="tp-name">Alice Johnson</div><div class="tp-role">Crypto Analyst</div></div></div>
+    </div>
+    <div class="testi-card">
+      <i class="fa-solid fa-quote-left quote"></i>
+      <h4>I appreciate the responsive customer support provided by Greatiby.</h4>
+      <p>
+        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+      </p>
+      <div class="testi-person"><img src="https://i.pravatar.cc/60?img=33" alt="Michael Smith" loading="lazy"><div><div class="tp-name">Michael Smith</div><div class="tp-role">Freelancer</div></div></div>
+    </div>
+    <div class="testi-card">
+      <i class="fa-solid fa-quote-left quote"></i>
+      <h4>Greatiby integrates seamlessly with my existing workflow.</h4>
+      <p>
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas excepturi.
+      </p>
+      <div class="testi-person"><img src="https://i.pravatar.cc/60?img=25" alt="Sarah L." loading="lazy"><div><div class="tp-name">Sarah L.</div><div class="tp-role">Product Manager</div></div></div>
+    </div>
+  </div>
+
+  <!-- FAQs -->
+  <div class="faq-head">
+    <h2>Frequently Asked <span class="accent">Questions</span></h2>
+    <p>Questions? We've got answers for you.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">How fast are swaps processed? <i class="fa-solid fa-plus"></i></div>
+      <div class="faq-a">
+        <p>
+          Simply deposit your crypto into your EasyPay wallet address. You'll receive Naira directly into your bank account. The entire process is automated and takes just seconds.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        What fees are associated with swaps? 
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <div class="faq-a">
+        <p>Swapping involves a fee of 0.5% of the transaction amount.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are swaps reversible? <i class="fa-solid fa-plus"></i></div>
+      <div class="faq-a">
+        <p>No, swaps are permanent and cannot be undone.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        What tokens can I swap? <i class="fa-solid fa-plus"></i>
+      </div>
+      <div class="faq-a">
+        <p>
+          You can swap Bitcoin, Ethereum, Solana, and a wide range of other supported tokens directly within the app.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="faq-explore-wrap">
+    <a href="help/help_center.html" class="btn btn-primary">
+      Explore all FAQs
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 18a4.5 4.5 0 0 1-.82-8.93A5.5 5.5 0 0 1 17.5 8.5a4.5 4.5 0 0 1 .5 8.98"/><path d="M12 11v7"/><path d="m9 15 3 3 3-3"/></svg>
+    </a>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <!-- Promo cards -->
+  <div class="promo-grid">
+    <div class="promo-card yellow">
+      <div class="promo-media">
+        <img src="assets/promo_1.webp" alt="card_1" loading="lazy">
+      </div>
+      <div class="promo-content">
+        <h4>Stay updated with Greatiby</h4>
+        <p>Get the latest updates, insights, and announcements delivered straight to you.</p>
+        <a href="blog/blog_page.html" class="pl">See Blog <i class="fa-solid fa-arrow-right diag-arrow"></i></a>
+      </div>
+    </div>
+    <div class="promo-card pink">
+      <div class="promo-media">
+        <img src="assets/promo_2.webp" alt="card_2" loading="lazy">
+      </div>
+      <div class="promo-content">
+        <h4>Join Us On Instagram</h4>
+        <p>Don't miss out on all the fun, updates and freebies. Keep up with us on social media.</p>
+        <span class="pl">Follow Us <i class="fa-solid fa-arrow-right diag-arrow"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+<svg class="footer-bg" viewBox="0 0 1897 1053" preserveAspectRatio="xMidYMid slice" focusable="false">
+<rect width="1897" height="1053" fill="#030303"/>
+<rect x="-155.4" y="-23.8" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="160" y="-23.8" width="316.2" height="316.2" fill="#060805"/>
+<rect x="475.4" y="-23.8" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="790.8" y="-23.8" width="316.2" height="316.2" fill="#060805"/>
+<rect x="1106.2" y="-23.8" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="1421.6" y="-23.8" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="1737" y="-23.8" width="316.2" height="316.2" fill="#060805"/>
+<rect x="-155.4" y="291.6" width="316.2" height="316.2" fill="#030303"/>
+<rect x="160" y="291.6" width="316.2" height="316.2" fill="#030303"/>
+<rect x="475.4" y="291.6" width="316.2" height="316.2" fill="#060805"/>
+<rect x="790.8" y="291.6" width="316.2" height="316.2" fill="#060805"/>
+<rect x="1106.2" y="291.6" width="316.2" height="316.2" fill="#030303"/>
+<rect x="1421.6" y="291.6" width="316.2" height="316.2" fill="#030303"/>
+<rect x="1737" y="291.6" width="316.2" height="316.2" fill="#060805"/>
+<rect x="-155.4" y="607" width="316.2" height="316.2" fill="#030303"/>
+<rect x="160" y="607" width="316.2" height="316.2" fill="#030303"/>
+<rect x="475.4" y="607" width="316.2" height="316.2" fill="#060805"/>
+<rect x="790.8" y="607" width="316.2" height="316.2" fill="#030303"/>
+<rect x="1106.2" y="607" width="316.2" height="316.2" fill="#030303"/>
+<rect x="1421.6" y="607" width="316.2" height="316.2" fill="#060805"/>
+<rect x="1737" y="607" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="-155.4" y="922.4" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="160" y="922.4" width="316.2" height="316.2" fill="#060805"/>
+<rect x="475.4" y="922.4" width="316.2" height="316.2" fill="#060805"/>
+<rect x="790.8" y="922.4" width="316.2" height="316.2" fill="#030303"/>
+<rect x="1106.2" y="922.4" width="316.2" height="316.2" fill="#060805"/>
+<rect x="1421.6" y="922.4" width="316.2" height="316.2" fill="#0b0d0a"/>
+<rect x="1737" y="922.4" width="316.2" height="316.2" fill="#0b0d0a"/>
+<path d="M-155 292V134.3A157.7 157.7 0 0 1 160.4 134.3V292Z" fill="#030303" stroke="#030303" stroke-width=".6"/>
+<path d="M1106.6 -23.4V292A315.4 315.4 0 0 1 791.2 -23.4Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+<path d="M1106.6 -23.4H1422A315.4 315.4 0 0 1 1106.6 292Z" fill="#030303" stroke="#030303" stroke-width=".6"/>
+<path d="M1422 292V134.3A157.7 157.7 0 0 1 1737.4 134.3V292Z" fill="#030303" stroke="#030303" stroke-width=".6"/>
+<path d="M475.8 292V607.4A315.4 315.4 0 0 1 160.4 292Z" fill="#060805" stroke="#060805" stroke-width=".6"/>
+<path d="M475.8 292H791.2A315.4 315.4 0 0 1 475.8 607.4Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+<path d="M791.2 607.4V449.7A157.7 157.7 0 0 1 1106.6 449.7V607.4Z" fill="#030303" stroke="#030303" stroke-width=".6"/>
+<path d="M1106.6 292V449.7A157.7 157.7 0 0 0 1422 449.7V292Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+<path d="M1422 607.4A157.7 157.7 0 0 1 1737.4 607.4Z" fill="#060805" stroke="#060805" stroke-width=".6"/>
+<path d="M-155 922.8V765.1A157.7 157.7 0 0 1 160.4 765.1V922.8Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+<path d="M475.8 922.8H160.4A315.4 315.4 0 0 1 475.8 607.4Z" fill="#060805" stroke="#060805" stroke-width=".6"/>
+<path d="M1422 922.8H1106.6A315.4 315.4 0 0 1 1422 607.4Z" fill="#060805" stroke="#060805" stroke-width=".6"/>
+<path d="M1422 922.8V607.4A315.4 315.4 0 0 1 1737.4 922.8Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+<path d="M1737.4 607.4A157.7 157.7 0 0 0 2052.8 607.4Z" fill="#060805" stroke="#060805" stroke-width=".6"/>
+<path d="M475.8 1238.2V1080.5A157.7 157.7 0 0 1 791.2 1080.5V1238.2Z" fill="#0b0d0a" stroke="#0b0d0a" stroke-width=".6"/>
+</svg>
+  <div class="wrap footer-cta">
+    <h2>Smarter Crypto Trading,<br>Right at Your Fingertips</h2>
+    <div class="store-buttons">
+      <a href="#" class="store-btn filled"><i class="fa-brands fa-apple"></i> Get on iPhone</a>
+      <a href="#" class="store-btn"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Google_Play_2022_icon.svg" alt="Google Play" class="store-icon-svg" loading="lazy"> Get on Android</a>
+    </div>
+  </div>
+  <div class="wrap footer-cols">
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="assets/gtb_logo_light.png" alt="greatiby_logo_light">
+      </div>
+      <p>Join over 200,000 people who trade with GreatIBY Crypto App</p>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="#">Download iOS</a></li>
+        <li><a href="#">Download Android</a></li>
+        <li><a href="freedom_swap/freedom_swap.html">Freedom Swap</a></li>
+        <li><a href="help/help_center.html">FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about/about.html">About Us</a></li>
+        <li><a href="contact/contact.html">Contact</a></li>
+        <li><a href="blog/blog_page.html">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Legals</h5>
+      <ul>
+        <li><a href="legal/legal.html#privacy-policy">Privacy Policy</a></li>
+        <li><a href="legal/legal.html#terms-of-service">Terms of Use</a></li>
+        <li><a href="legal/legal.html#kyc-aml">AML</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="wrap footer-brand-mobile">
+    <div class="logo">
+      <img src="assets/gtb_logo_light.png" alt="greatiby_logo_light">
+    </div>
+    <p>Join over 200,000 people who trade with GreatIBY Crypto App</p>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>&copy; <span id="currentYear">2026</span>, GREATIBY LIMITED RC-1581814</span>
+    <div class="footer-social">
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back-to-top button -->
+<button class="back-to-top" id="backToTop" title="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="home_script.js"></script>
+</body>
+</html>

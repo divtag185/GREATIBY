@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js')</script>
+<title>Supported Currencies &dash; Greatiby</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/global_freedom_styles.css">
+
+<style>
+:root {
+  --live: #00C076;
+  --slate: #5f6c7f;
+}
+
+.wrap {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 112px 24px 140px;
+}
+
+.page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #dcdee0;
+}
+
+h1 {
+  font-size: 52px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  color: #050505;
+}
+
+.h1-pre {
+  display: block;
+}
+
+.sub {
+  margin-top: 10px;
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--slate);
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: none;
+}
+
+.fbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 254px;
+  height: 55px;
+  padding: 0 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  font-size: 14px;
+  color: #222;
+  transition: border-color .15s,box-shadow .15s;
+}
+
+.fbox:focus-within {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(95,112,92,.14);
+}
+
+.fbox i {
+  font-size: 14px;
+  color: #2b2b2b;
+}
+
+.fbox input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+.fbox input::placeholder {
+  color: #6f7681;
+  opacity: 1;
+}
+
+.dd {
+  position: relative;
+}
+
+.fbtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 55px;
+  padding: 0 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  font-size: 14px;
+  color: #222;
+  white-space: nowrap;
+  transition: border-color .15s,box-shadow .15s;
+}
+
+.fbtn:hover {
+  border-color: #cfd3d1;
+}
+
+.dd.open .fbtn {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(95,112,92,.14);
+}
+
+.fbtn .ic {
+  font-size: 14px;
+  color: #2b2b2b;
+}
+
+.fbtn .chev {
+  display: none;
+  margin-left: auto;
+  font-size: 11px;
+  color: #777;
+  transition: transform .2s;
+}
+
+.dd.open .fbtn .chev {
+  transform: rotate(180deg);
+}
+
+.lbl-m {
+  display: none;
+}
+
+.dd-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 100%;
+  z-index: 60;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(20,30,20,.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity .18s,transform .18s,visibility .18s;
+}
+
+.dd:last-child .dd-menu {
+  left: auto;
+  right: 0;
+}
+
+.dd.open .dd-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.dd-opt {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 14px;
+  color: #222;
+  white-space: nowrap;
+  transition: background-color .15s;
+}
+
+.dd-opt:hover {
+  background: #f2f4f2;
+}
+
+.dd-opt.sel {
+  color: var(--sage);
+  font-weight: 600;
+}
+
+.grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  background: #fff;
+  border: 1px solid #ebedee;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(16,24,40,.03);
+  transition: transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -46px;
+  right: -34px;
+  width: 160px;
+  height: 140px;
+  background: radial-gradient(closest-side,rgba(0,0,0,.055),transparent);
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(16,24,40,.08);
+  border-color: #e0e3e1;
+}
+
+.dex {
+  position: absolute;
+  top: 33px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.dex i {
+  font-size: 11px;
+}
+
+.ibox {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  margin-left: 10px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid #efefef;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.05);
+}
+
+.name-row {
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.name-row h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  color: #1b1b1b;
+}
+
+.desc {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--slate);
+}
+
+.card-foot {
+  position: relative;
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ececec;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+}
+
+.live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--live);
+}
+
+.live i {
+  font-size: 6px;
+}
+
+.trade {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #3a3f3a;
+}
+
+.trade i {
+  font-size: 10px;
+  transition: transform .2s ease;
+}
+
+.trade:hover i {
+  transform: translateX(3px);
+}
+
+.coin {
+  --cs: 34px;
+  width: var(--cs);
+  height: var(--cs);
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 50%;
+  color: #fff;
+  line-height: 1;
+}
+
+.coin i {
+  font-size: calc(var(--cs) * .44);
+}
+
+.coin-btc {
+  color: #f7931a;
+}
+
+.coin-btc i {
+  font-size: var(--cs);
+}
+
+.coin-eth {
+  background: #14172f;
+}
+
+.coin-bnb {
+  background: #f3ba2f;
+}
+
+.coin-avax {
+  background: #e84142;
+}
+
+.coin-sol {
+  background: linear-gradient(135deg,#9945ff,#14f195);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.tag-ticker {
+  background: #fdf1d6;
+  color: #d98f1d;
+}
+
+.tag-pop {
+  background: #CDFEE2;
+  color: var(--live);
+  text-transform: none;
+}
+
+.list-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.list {
+  display: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #ebedee;
+  border-radius: 16px;
+  transition: border-color .2s,box-shadow .2s;
+}
+
+.item:hover {
+  border-color: #dfe3e0;
+  box-shadow: 0 8px 22px rgba(16,24,40,.06);
+}
+
+.item .coin {
+  --cs: 33px;
+}
+
+.item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.item-name {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -.005em;
+  color: #1c1c1c;
+  line-height: 18px;
+}
+
+.item-name small {
+  margin-left: 4px;
+  font-size: 10px;
+  font-weight: 400;
+  color: #9a9ea5;
+  text-transform: uppercase;
+}
+
+.item-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.item-go {
+  margin-left: auto;
+  font-size: 20px;
+  color: #8a8f8a;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.item.has-go .item-go,.item:hover .item-go {
+  opacity: 1;
+}
+
+.empty {
+  padding: 72px 0;
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.empty[hidden] {
+  display: none;
+}
+
+.empty i {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 26px;
+  color: #b4bab4;
+}
+
+.dock {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 90;
+  display: grid;
+  grid-template-columns: repeat(5,78px);
+  background: #fff;
+  border: 1px solid #efefef;
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(0,0,0,.1);
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 14px 0;
+  font-size: 11px;
+  line-height: 1.2;
+  color: #8b8f8b;
+  transition: color .15s;
+}
+
+.dock-item i {
+  font-size: 17px;
+  line-height: 1;
+  color: #3b403b;
+  transition: color .15s;
+}
+
+.dock-item:hover,.dock-item:hover i {
+  color: var(--sage);
+}
+
+.dock-center {
+  position: relative;
+}
+
+.dock-center a {
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sage);
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(95,112,92,.35);
+  transition: background-color .2s,transform .15s;
+}
+
+.dock-center a:hover {
+  background: var(--sage-dark);
+}
+
+.dock-center a:active {
+  transform: translateX(-50%) scale(.95);
+}
+
+@media (max-width: 1023px) {
+  .page-head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+  }
+  .filters {
+    width: 100%;
+  }
+  .fbox {
+    flex: 1;
+    width: auto;
+  }
+  .grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+  h1 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background: #fff;
+  }
+  .wrap {
+    padding: 64px 20px 36px;
+  }
+  .page-head {
+    gap: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  h1 {
+    margin-bottom: 22px;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -.01em;
+  }
+  .h1-pre,.sub {
+    display: none;
+  }
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 16px;
+  }
+  .fbox {
+    grid-column: 1 / -1;
+    height: 57px;
+    padding: 0 18px 0 16px;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+  .fbtn {
+    width: 100%;
+    height: 57px;
+    padding: 0 16px;
+    justify-content: space-between;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #7a7f87;
+  }
+  .fbtn .ic,.lbl-d {
+    display: none;
+  }
+  .lbl-m {
+    display: inline;
+  }
+  .fbtn .chev {
+    display: block;
+  }
+  .dd:last-child .dd-menu,.dd-menu {
+    left: 0;
+    right: 0;
+    min-width: 0;
+  }
+  .list-label {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    margin: 20px 0 18px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -.005em;
+    white-space: normal;
+  }
+  .grid {
+    display: none;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .dock {
+    display: none;
+  }
+}
+@media (max-width: 360px) {
+  .item {
+    padding: 12px;
+  }
+  .item-name {
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-pill">
+    <a class="logo" href="#">
+      <img src="../assets/gtb_logo_dark.png" alt="logo">
+    </a>
+
+    <nav class="main-nav">
+      <a href="swap.html">Exchange</a>
+      <a href="history.html">History</a>
+      <a href="#">Support</a>
+    </nav>
+  </div>
+
+  <div class="header-cta">
+    <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+    <button class="hamburger" id="hamburger" type="button">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="mobile-menu" id="mobileMenu" inert>
+  <button class="mobile-close" id="mobileClose" type="button">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <a href="swap.html">Exchange</a>
+  <a href="history.html">History</a>
+  <a href="#">Support</a>
+  <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+</aside>
+
+<main class="wrap">
+
+  <section class="page-head reveal">
+    <div class="head-text">
+      <h1><span class="h1-pre">Supported</span> Currencies</h1>
+      <p class="sub">
+        Explore and manage the digital assets available on Greatiby. High liquidity, institutional-grade security.
+      </p>
+    </div>
+
+    <div class="filters">
+      <label class="fbox">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="search" placeholder="Search currencies..." autocomplete="off">
+      </label>
+
+      <div class="dd" id="ddType">
+        <button class="fbtn" type="button">
+          <i class="fa-solid fa-filter ic"></i>
+          <span class="lbl-d">All Types</span>
+          <span class="lbl-m">Types</span>
+          <i class="fa-solid fa-chevron-down chev"></i>
+        </button>
+        <div class="dd-menu"></div>
+      </div>
+
+      <div class="dd" id="ddNet">
+        <button class="fbtn" type="button">
+          <i class="fa-solid fa-sitemap ic"></i>
+          <span class="lbl-d">All Networks</span>
+          <span class="lbl-m">Networks</span>
+          <i class="fa-solid fa-chevron-down chev"></i>
+        </button>
+        <div class="dd-menu"></div>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="list-label">All Currencies</h2>
+
+  <div class="grid" id="grid"></div>
+  <div class="list" id="list"></div>
+
+  <p class="empty" id="empty" hidden>
+    <i class="fa-solid fa-magnifying-glass"></i>No currencies match your search.
+  </p>
+</main>
+
+<nav class="dock">
+  <a href="#" class="dock-item">
+    <i class="fa-solid fa-coins"></i>Coin
+  </a>
+  <a href="history.html" class="dock-item">
+    <i class="fa-regular fa-file-lines"></i>History
+  </a>
+  <div class="dock-center">
+    <a href="swap.html">
+      <i class="fa-solid fa-arrow-right-arrow-left" style="transform:rotate(90deg)"></i>
+    </a>
+  </div>
+  <a href="#" class="dock-item">
+    <i class="fa-solid fa-headset"></i>Support
+  </a>
+  <a href="../index.html" class="dock-item">
+    <i class="fa-solid fa-globe"></i>Greatiby
+  </a>
+</nav>
+
+<footer class="site-footer reveal">
+  <div class="footer-top">
+    <a class="logo light" href="#">
+      <img src="../assets/gtb_logo_light.png" alt="logo">
+    </a>
+    <nav class="footer-links">
+      <a href="../legal/legal.html#terms-of-service">Terms</a>
+      <a href="../legal/legal.html#privacy-policy">Privacy</a>
+      <a href="../legal/legal.html#kyc-aml">AML</a>
+    </nav>
+  </div>
+  <p class="copy">
+    &copy; <span id="year">2026</span> Greatiby Digital Assets Exchange<span class="dash"> - </span><br class="mob-only">RC-1581814. All rights reserved.
+  </p>
+</footer>
+
+<script>
+  (function () {
+    /* ---------- Mobile menu ---------- */
+    var hamburger = document.getElementById('hamburger');
+    var menu = document.getElementById('mobileMenu');
+    var overlay = document.getElementById('menuOverlay');
+    var closeBtn = document.getElementById('mobileClose');
+
+    function setMenu(open, returnFocus) {
+      menu.classList.toggle('open', open);
+      overlay.classList.toggle('open', open);
+      menu.inert = !open;
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) closeBtn.focus();
+      else if (returnFocus) hamburger.focus();
+    }
+
+    hamburger.addEventListener('click', function () { setMenu(true); });
+    closeBtn.addEventListener('click', function () { setMenu(false, true); });
+    overlay.addEventListener('click', function () { setMenu(false); });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 980 && menu.classList.contains('open')) setMenu(false);
+    });
+
+    /* ---------- Copyright year ---------- */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ---------- Fade-in scroll ---------- */
+    var io = null;
+    if ('IntersectionObserver' in window) {
+      io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('in');
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    }
+    function watch(el) {
+      if (io) io.observe(el);
+      else el.classList.add('in');
+    }
+    document.querySelectorAll('.reveal').forEach(watch);
+
+    /* ---------- Data ---------- */
+    var COINS = {
+      btc:  { cls: 'coin-btc',  icon: 'fa-brands fa-bitcoin' },
+      eth:  { cls: 'coin-eth',  icon: 'fa-brands fa-ethereum' },
+      bnb:  { cls: 'coin-bnb',  icon: 'fa-solid fa-diamond' },
+      avax: { cls: 'coin-avax', icon: 'fa-solid fa-mountain' },
+      sol:  { cls: 'coin-sol',  icon: 'fa-solid fa-bars' }
+    };
+
+    // Cards (desktop)
+    var CARDS = [
+      { name: 'Bitcoin',   t: 'BTC',  ic: 'btc',  net: 'Bitcoin' },
+      { name: 'Ethereum',  t: 'ETH',  ic: 'eth',  net: 'Ethereum' },
+      { name: 'BNB',       t: 'BNB',  ic: 'bnb',  net: 'BNB Chain' },
+      { name: 'Avalanche', t: 'AVAX', ic: 'avax', net: 'Avalanche' },
+      { name: 'Solana',    t: 'SOL',  ic: 'sol',  net: 'Solana' },
+      { name: 'BNB',       t: 'BNB',  ic: 'bnb',  net: 'BNB Chain' },
+      { name: 'Avalanche', t: 'AVAX', ic: 'avax', net: 'Avalanche' },
+      { name: 'Solana',    t: 'SOL',  ic: 'sol',  net: 'Solana' },
+      { name: 'BNB',       t: 'BNB',  ic: 'bnb',  net: 'BNB Chain' }
+    ];
+
+    // List items (mobile)
+    var ITEMS = [
+      { name: 'Bitcoin',             sub: 'BTC',    tag: 'BTC',    ic: 'btc',  net: 'Bitcoin' },
+      { name: 'BNB Smart Chain',     sub: 'BNBBSC', tag: 'BSC',    ic: 'bnb',  net: 'BNB Chain' },
+      { name: 'Avalanche (C-Chain)', sub: 'AVAX',   tag: 'CCHAIN', ic: 'avax', net: 'Avalanche' },
+      { name: 'Ethereum',            sub: 'ETH',    tag: 'ETH',    ic: 'eth',  net: 'Ethereum' },
+      { name: 'Solana',              sub: 'SOL',    tag: 'SOL',    ic: 'sol',  net: 'Solana' },
+      { name: 'Avalanche',           sub: 'AVAX',   tag: 'AVAX',   ic: 'avax', net: 'Avalanche' },
+      { name: 'Polkadot',            sub: 'DOT',    tag: 'DOT',    ic: 'bnb',  net: 'Polkadot', go: true },
+      { name: 'Cardano',             sub: 'ADA',    tag: 'ADA',    ic: 'bnb',  net: 'Cardano',  go: true }
+    ];
+
+    var TYPES = ['All Types', 'Popular', 'DEX'];
+    var NETS  = ['All Networks', 'Bitcoin', 'Ethereum', 'BNB Chain', 'Avalanche', 'Solana', 'Polkadot', 'Cardano'];
+    var DESC  = 'Instantly exchange cryptocurrencies with institutional-grade liquidity and execution speed.';
+
+    /* ---------- Rendering ---------- */
+    var grid  = document.getElementById('grid');
+    var list  = document.getElementById('list');
+    var empty = document.getElementById('empty');
+    var search = document.getElementById('search');
+    var mq = window.matchMedia('(max-width: 767px)');
+    var state = { q: '', type: TYPES[0], net: NETS[0] };
+
+    function coin(k) {
+      var c = COINS[k];
+      return '<span class="coin ' + c.cls + '"><i class="' + c.icon + '"></i></span>';
+    }
+
+    function cardHTML(c, i, cls) {
+      return '<article class="card' + cls + '" style="--d:' + ((i % 3) * 70) + 'ms">' +
+        '<span class="dex"><i class="fa-solid fa-circle-nodes"></i>DEX</span>' +
+        '<span class="ibox">' + coin(c.ic) + '</span>' +
+        '<div class="name-row"><h3>' + c.name + '</h3><span class="tag tag-ticker">' + c.t + '</span></div>' +
+        '<p class="desc">' + DESC + '</p>' +
+        '<div class="card-foot">' +
+          '<span class="live"><i class="fa-solid fa-circle"></i>Live Trading</span>' +
+          '<a class="trade" href="swap.html">Trade Now <i class="fa-solid fa-arrow-right"></i></a>' +
+        '</div>' +
+      '</article>';
+    }
+
+    function itemHTML(c, i, cls) {
+      return '<a class="item' + (c.go ? ' has-go' : '') + cls + '" href="swap.html" style="--d:' + ((i % 6) * 45) + 'ms;">' +
+        coin(c.ic) +
+        '<span class="item-body">' +
+          '<span class="item-name">' + c.name + '<small>' + c.sub + '</small></span>' +
+          '<span class="item-tags"><span class="tag tag-ticker">' + c.tag + '</span><span class="tag tag-pop">Popular</span></span>' +
+        '</span>' +
+        '<i class="fa-regular fa-circle-right item-go"></i>' +
+      '</a>';
+    }
+
+    function match(c) {
+      var hay = (c.name + ' ' + (c.t || c.sub) + ' ' + (c.sub || '')).toLowerCase();
+      if (state.q && hay.indexOf(state.q) < 0) return false;
+      if (state.net !== NETS[0] && c.net !== state.net) return false;
+      return true;
+    }
+
+    function render(first) {
+      var cls = first ? ' reveal' : '';
+      var cards = CARDS.filter(match);
+      var items = ITEMS.filter(match);
+      grid.innerHTML = cards.map(function (c, i) { return cardHTML(c, i, cls); }).join('');
+      list.innerHTML = items.map(function (c, i) { return itemHTML(c, i, cls); }).join('');
+      if (first) {
+        grid.querySelectorAll('.reveal').forEach(watch);
+        list.querySelectorAll('.reveal').forEach(watch);
+      }
+      empty.hidden = (mq.matches ? items.length : cards.length) > 0;
+    }
+
+    /* ---------- Filters ---------- */
+    var dds = document.querySelectorAll('.dd');
+
+    function closeDDs() {
+      dds.forEach(function (d) {
+        d.classList.remove('open');
+      });
+    }
+
+    function buildDD(root, options, key, mobileDefault) {
+      var btn = root.querySelector('.fbtn');
+      var menuEl = root.querySelector('.dd-menu');
+      var lblD = root.querySelector('.lbl-d');
+      var lblM = root.querySelector('.lbl-m');
+
+      menuEl.innerHTML = options.map(function (o, i) {
+        return '<button type="button" class="dd-opt' + (i === 0 ? ' sel' : '') + '" data-i="' + i + '">' + o + '</button>';
+      }).join('');
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = !root.classList.contains('open');
+        closeDDs();
+        if (open) {
+          root.classList.add('open');
+        }
+      });
+
+      menuEl.addEventListener('click', function (e) {
+        var b = e.target.closest('.dd-opt');
+        if (!b) return;
+        var i = +b.getAttribute('data-i');
+        state[key] = options[i];
+        menuEl.querySelectorAll('.dd-opt').forEach(function (o) {
+          o.classList.toggle('sel', o === b);
+        });
+        lblD.textContent = options[i];
+        lblM.textContent = i === 0 ? mobileDefault : options[i];
+        closeDDs();
+        btn.focus();
+        render(false);
+      });
+    }
+
+    buildDD(document.getElementById('ddType'), TYPES, 'type', 'Types');
+    buildDD(document.getElementById('ddNet'), NETS, 'net', 'Networks');
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.dd')) closeDDs();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      closeDDs();
+      if (menu.classList.contains('open')) setMenu(false, true);
+    });
+
+    search.addEventListener('input', function () {
+      state.q = search.value.trim().toLowerCase();
+      render(false);
+    });
+
+    function syncPlaceholder() {
+      search.placeholder = mq.matches ? 'Search currencies' : 'Search currencies...';
+      render(false);
+    }
+    if (mq.addEventListener) mq.addEventListener('change', syncPlaceholder);
+    else mq.addListener(syncPlaceholder);
+    search.placeholder = mq.matches ? 'Search currencies' : 'Search currencies...';
+
+    render(true);
+  })();
+</script>
+</body>
+</html>

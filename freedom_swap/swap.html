@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swap Crypto | Freedom Swap by Greatiby</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/global_freedom_styles.css">
+<style>
+.mlogo {
+  display: none;
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.sheet {
+  width: 100%;
+  max-width: 540px;
+  padding-top: 96px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 14px;
+  color: #CDA27B;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -.025em;
+  margin: 10px 0 18px;
+}
+
+.sub {
+  font-size: 18px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 28px;
+  padding: 34px 16px 28px;
+  margin-top: 42px;
+  text-align: left;
+}
+
+.tabs,.rate {
+  display: none;
+}
+
+.lbl {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 4px 8px;
+}
+
+.field+.field {
+  margin-top: 24px;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 10px 0 22px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  transition: border-color .2s,box-shadow .2s;
+}
+
+.box:focus-within {
+  border-color: var(--g);
+  box-shadow: 0 0 0 3px rgba(95,112,92,.18);
+}
+
+.box input,.out {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 16px;
+}
+
+.box input::placeholder,.out {
+  color: #8b8f98;
+}
+
+.out.has {
+  color: #0B0B0B;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px 0 8px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  background: #F3F4F6;
+}
+
+.chip .caret {
+  font-size: 11px;
+  color: var(--m);
+}
+
+.coin {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--c);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex: none;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--tb);
+  color: var(--tf);
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  width: 210px;
+  max-height: 260px;
+  overflow: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(15,23,42,.14);
+  padding: 6px;
+  z-index: 20;
+  list-style: none;
+}
+
+.menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.menu button:hover {
+  background: #F3F4F6;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 56px;
+  margin-top: 28px;
+  border-radius: 999px;
+  background: var(--g);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background .2s;
+}
+
+.free {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 72px;
+  font-size: 16px;
+  color: #333;
+}
+
+.dock {
+  position: sticky;
+  bottom: 24px;
+  margin: 64px auto 24px;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 10px 16px 8px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(15,23,42,.1);
+  z-index: 5;
+}
+
+.dock a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 62px;
+  font-size: 10px;
+  color: var(--m);
+}
+
+.dock a i {
+  font-size: 15px;
+  color: #4b5563;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: var(--g) radial-gradient(rgba(255,255,255,.07) 1.5px,transparent 1.5px) 0 0/22px 22px;
+  }
+  header {
+    top: calc(10vh - 58px);
+    margin: 16px 16px 0;
+  }
+  .nav-pill .logo .logo-text {
+    color: #fff;
+    font-size: 18px;
+  }
+  .nav-pill .logo .logo-mark {
+    border-color: #e4d9bd;
+    color: #e4d9bd;
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  .mlogo {
+    display: flex;
+    justify-content: center;
+    padding: 18px 0 44px;
+  }
+  .mlogo .logo .logo-text {
+    color: #fff;
+    font-size: 22px;
+  }
+  .mlogo .logo-mark {
+    border-color: #e4d9bd;
+    color: #e4d9bd;
+  }
+  .stage {
+    background: #fff;
+    border-radius: 28px 28px 0 0;
+    margin-top: -22px;
+    padding: 0 14px;
+    position: relative;
+  }
+  .sheet {
+    padding-top: 22px;
+  }
+  .eyebrow,.sub {
+    display: none;
+  }
+  h1 {
+    font-size: 16px;
+    letter-spacing: -.01em;
+    margin: 0;
+  }
+  .card {
+    margin-top: 24px;
+    padding: 18px 14px 16px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 0 0 1px #F0F0F2;
+  }
+  .tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .tabs button {
+    flex: 1;
+    height: 36px;
+    border-radius: 12px;
+    background: #F3F4F6;
+    color: #9CA3AF;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .tabs button.on {
+    background: var(--g);
+    color: #fff;
+  }
+  .lbl {
+    font-size: 11px;
+    margin: 0 2px 6px;
+  }
+  .field+.field {
+    margin-top: 0;
+  }
+  .box {
+    height: 44px;
+    padding: 0 6px 0 14px;
+  }
+  .box input,.out {
+    font-size: 12px;
+  }
+  .chip {
+    height: 32px;
+    font-size: 10px;
+    gap: 5px;
+    padding: 0 8px 0 4px;
+  }
+  .coin {
+    width: 15px;
+    height: 15px;
+    font-size: 8px;
+  }
+  .tag {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  .rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 12px 2px 10px;
+    font-size: 9px;
+    color: var(--m);
+  }
+  .rate span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .rate button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    font-size: 8px;
+    color: var(--m);
+  }
+  .submit {
+    height: 44px;
+    margin-top: 16px;
+    font-size: 12px;
+  }
+  .free {
+    margin: 0;
+    padding: 18px 0 28px;
+    font-size: 11px;
+    gap: 8px;
+  }
+  .free .ico {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+  .dock {
+    display: none;
+  }
+  .menu {
+    width: 190px;
+  }
+  .hamburger {
+    background: #fff;
+    color: var(--sage);
+  }
+}
+</style>
+</head>
+<body class="flow">
+<header>
+  <div class="nav-pill">
+    <a href="#" class="logo">
+      <img src="../assets/gtb_logo_light.png" alt="logo">
+    </a>
+    <nav class="main-nav">
+      <a href="swap.html">Exchange</a>
+      <a href="history.html">History</a>
+      <a href="#">Support</a>
+    </nav>
+  </div>
+  <div class="header-cta">
+    <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+    <button class="hamburger" onclick="openMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+<div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
+<aside class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <a href="swap.html" onclick="closeMenu()">Exchange</a>
+  <a href="history.html" onclick="closeMenu()">History</a>
+  <a href="#" onclick="closeMenu()">Support</a>
+  <a href="freedom_swap.html" class="btn btn-primary">Go Back Home</a>
+</aside>
+<a href="#" class="mlogo">
+  <span class="logo">
+    <img src="../assets/gtb_logo_light.png" alt="logo">
+  </span>
+</a>
+
+<main class="stage">
+  <section class="sheet">
+    <p class="eyebrow">DEX Exchange</p>
+    <h1>Swap Crypto</h1>
+    <p class="sub">
+      Instantly exchange cryptocurrencies with institutional-grade liquidity and execution speed.
+    </p>
+
+    <div class="card">
+      <div class="tabs">
+        <button class="on" data-m="send">Exchange</button>
+        <button data-m="pay">Buy Crypto</button>
+      </div>
+      <div class="field">
+        <label class="lbl" for="amt" id="sendLbl">You send</label>
+        <div class="box" id="boxFrom">
+          <input id="amt" type="text" inputmode="decimal" autocomplete="off" placeholder="0">
+          <button class="chip" id="chipFrom"></button>
+        </div>
+      </div>
+      <div class="rate">
+        <span><i class="fa-solid fa-lock"></i>Floating rate</span>
+        <button id="flip"><i class="fa-solid fa-arrow-up-arrow-down"></i></button>
+      </div>
+      <div class="field">
+        <span class="lbl">You get</span>
+        <div class="box" id="boxTo">
+          <span class="out" id="out">&approx;0</span>
+          <button class="chip" id="chipTo"></button>
+        </div>
+      </div>
+      <a href="step_1.html" class="btn btn-primary submit" id="go" disabled>Exchange Now 
+        <i class="fa-solid fa-right-left"></i>
+      </a>
+    </div>
+
+    <div class="free">
+      <span class="ico">
+        <i class="fa-solid fa-arrow-up-arrow-down"></i>
+      </span>Freedom Swap by Greatiby
+    </div>
+  </section>
+
+  <nav class="dock">
+    <a href="swap.html">
+      <i class="fa-solid fa-coins"></i>Coin
+    </a>
+    <a href="history.html">
+      <i class="fa-regular fa-file-lines"></i>History
+    </a>
+    <a href="#" class="mid" id="dockSwap">
+      <i class="fa-solid fa-arrow-right-arrow-left" style="transform:rotate(90deg); color: white;"></i>
+    </a>
+    <a href="#"><i class="fa-solid fa-headset"></i>Support</a>
+    <a href="../index.html"><i class="fa-solid fa-globe"></i>Greatiby</a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <a class="logo light" href="#">
+      <img src="../assets/gtb_logo_light.png" alt="logo">
+    </a>
+    <nav class="footer-links">
+      <a href="../legal/legal.html#terms-of-service">Terms</a>
+      <a href="../legal/legal.html#privacy-policy">Privacy</a>
+      <a href="../legal/legal.html#kyc-aml">AML</a>
+    </nav>
+  </div>
+  <p class="copy">
+    &copy; 2026 Greatiby Digital Assets Exchange<span class="dash"> - </span><br class="mob-only">RC-1581814. All rights reserved.
+  </p>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const C={
+  BTC:{p:67500,c:'#F7931A',i:'fa-brands fa-bitcoin',tb:'#FFF1DC',tf:'#F7931A'},
+  ETH:{p:2496.69,c:'#1C1F3A',i:'fa-brands fa-ethereum',tb:'#E8EAF6',tf:'#3C4A8A'},
+  USDT:{p:1,c:'#26A17B',i:'fa-solid fa-dollar-sign',tb:'#DDF3EC',tf:'#26A17B'},
+  SOL:{p:150,c:'#8247E5',i:'fa-solid fa-s',tb:'#EEE6FB',tf:'#8247E5'},
+  BNB:{p:600,c:'#F3BA2F',i:'fa-solid fa-b',tb:'#FFF4D6',tf:'#B5851A'}
+};
+const S={from:'BTC',to:'ETH'};
+const rate=(f,t)=>+(C[f].p/C[t].p).toPrecision(1);
+const coin=k=>`<span class="coin" style="--c:${C[k].c}"><i class="${C[k].i}"></i></span>`;
+const chip=k=>`${coin(k)}<span>${k}</span><span class="tag" style="--tb:${C[k].tb};--tf:${C[k].tf}">${k}</span><i class="fa-solid fa-chevron-down caret"></i>`;
+const amt=$('amt'),out=$('out'),go=$('go');
+
+function render(){
+  $('chipFrom').innerHTML=chip(S.from);
+  $('chipTo').innerHTML=chip(S.to);
+  const a=parseFloat(amt.value)||0;
+  const r=a*rate(S.from,S.to);
+  out.textContent='≈'+(a?r.toLocaleString('en-US',{maximumFractionDigits:5}):'0');
+  out.classList.toggle('has',a>0);
+  go.disabled=!(a>0);
+}
+amt.addEventListener('input',()=>{
+  let v=amt.value.replace(/[^0-9.]/g,'');
+  const i=v.indexOf('.');
+  if(i>-1)v=v.slice(0,i+1)+v.slice(i+1).replace(/\./g,'');
+  amt.value=v;render();
+});
+function flip(e){
+  if(e)e.preventDefault();
+  const a=parseFloat(amt.value)||0;
+  const r=a*rate(S.from,S.to);
+  [S.from,S.to]=[S.to,S.from];
+  if(a)amt.value=+r.toFixed(5);
+  render();
+}
+$('flip').onclick=flip;$('dockSwap').onclick=flip;
+
+function closeMenus(){document.querySelectorAll('.menu').forEach(m=>m.remove())}
+function openMenu(side,e){
+  e.stopPropagation();
+  const box=$(side==='from'?'boxFrom':'boxTo');
+  const had=box.querySelector('.menu');
+  closeMenus();
+  if(had)return;
+  const ul=document.createElement('ul');ul.className='menu';
+  Object.keys(C).filter(k=>k!==S[side==='from'?'to':'from']).forEach(k=>{
+    const li=document.createElement('li');
+    li.innerHTML=`<button type="button">${coin(k)}<span>${k}</span></button>`;
+    li.firstChild.onclick=()=>{S[side]=k;closeMenus();render()};
+    ul.appendChild(li);
+  });
+  box.appendChild(ul);
+}
+$('chipFrom').onclick=e=>openMenu('from',e);
+$('chipTo').onclick=e=>openMenu('to',e);
+document.addEventListener('click',closeMenus);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus()});
+
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>{x.classList.toggle('on',x===b)});
+  $('sendLbl').textContent=b.dataset.m==='pay'?'You pay':'You send';
+});
+function openMenu(){$('mobileMenu').classList.add('open');$('overlay').classList.add('open')}
+function closeMenu(){$('mobileMenu').classList.remove('open');$('overlay').classList.remove('open')}
+go.onclick=()=>{go.innerHTML='Processing… <i class="fa-solid fa-spinner fa-spin"></i>';setTimeout(()=>{go.innerHTML='Exchange Now <i class="fa-solid fa-right-left"></i>'},1200)};
+render();
+</script>
+</body>
+</html>

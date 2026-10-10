@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js')</script>
+<title>Greatiby – Freedom Swap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/global_freedom_styles.css">
+
+<style>
+:root {
+  --green: #66bf47;
+  --tan: #d6a06a;
+  --muted: #5b615a;
+  --line: #e3e5e3;
+  --hl: clamp(24px,8.3vw,119px);
+  --hr: clamp(24px,5vw,72px);
+}
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 143px 24px 162px;
+  text-align: center;
+}
+.phone {
+  display: block;
+  width: min(362px,calc(100% - 56px));
+  height: 387px;
+  flex: none;
+  border-radius: 28px;
+  object-fit: cover;
+  object-position: center;
+  margin-top: -65px;
+}
+.eyebrow {
+  margin-top: 41px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--tan);
+  letter-spacing: 0;
+}
+.hero h1 {
+  margin-top: 18px;
+  font-size: 46px;
+  line-height: 1.24;
+  font-weight: 600;
+  letter-spacing: -.025em;
+  color: #000;
+}
+.hero h1 .accent {
+  color: var(--green);
+}
+.terms-box {
+  width: min(607px,100%);
+  margin-top: 18px;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fafafa;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #1b1b1b;
+}
+.agree {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #1b1b1b;
+  cursor: pointer;
+  user-select: none;
+}
+.agree input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.check {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  background: var(--sage);
+  border: 1px solid var(--sage);
+  color: #fff;
+  font-size: 9px;
+  transition: background-color .15s,border-color .15s;
+}
+.check i {
+  transition: opacity .15s;
+}
+.agree input:not(:checked) + .check {
+  background: #fff;
+  border-color: #b5bab4;
+}
+.agree input:not(:checked) + .check i {
+  opacity: 0;
+}
+.agree input:focus-visible + .check {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+}
+.agree a {
+  color: var(--sage);
+}
+.agree a:hover {
+  text-decoration: underline;
+}
+.agree.shake.in {
+  animation: shake .4s;
+}
+@keyframes shake {
+  20% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+.actions {
+  margin-top: 38px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.actions .btn {
+  width: 164px;
+  padding: 0;
+}
+.btn-primary.is-off {
+  opacity: .5;
+}
+.features {
+  width: min(607px,100%);
+  margin-top: 49px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 8px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: #454b44;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -.005em;
+  line-height: 1.2;
+}
+.feature i {
+  font-size: 22px;
+  color: #4a514a;
+}
+.feature span {
+  color: var(--muted);
+}
+@media (max-width: 767px) {
+  .hero {
+    padding: 89px 20px 34px;
+  }
+  .phone {
+    height: 376px;
+    width: min(362px,calc(100% - 16px));
+  }
+  .eyebrow {
+    margin-top: 21px;
+    font-size: 14.5px;
+  }
+  .hero h1 {
+    margin-top: 20px;
+    font-size: 28px;
+    line-height: 1.23;
+  }
+  .terms-box {
+    max-width: 560px;
+    padding: 16px 20px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .agree {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  .actions {
+    width: 100%;
+    max-width: 560px;
+    margin-top: 24px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .actions .btn {
+    width: 100%;
+    font-size: 14.5px;
+  }
+  .features {
+    max-width: 560px;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  .feature {
+    gap: 6px;
+    padding: 11px 4px 10px;
+    border-radius: 10px;
+    font-size: clamp(7.5px,2.3vw,10px);
+    font-weight: 400;
+  }
+  .feature i {
+    font-size: 16px;
+  }
+}
+@media (max-width: 360px) {
+  .terms-box {
+    font-size: 12px;
+    padding: 14px 12px;
+  }
+  .hero h1 {
+    font-size: 26px;
+  }
+  .phone {
+    width: calc(100% - 8px);
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-pill">
+    <a class="logo" href="#">
+      <img src="../assets/gtb_logo_dark.png" alt="logo">
+    </a>
+
+    <nav class="main-nav">
+      <a href="swap.html">Exchange</a>
+      <a href="history.html">History</a>
+      <a href="#">Support</a>
+    </nav>
+  </div>
+
+  <div class="header-cta">
+    <a href="../index.html" class="btn btn-primary">Go Back Home</a>
+    <button class="hamburger" id="hamburger" type="button">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="mobile-menu" id="mobileMenu" inert>
+  <button class="mobile-close" id="mobileClose" type="button">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <a href="swap.html">Exchange</a>
+  <a href="history.html">History</a>
+  <a href="#">Support</a>
+  <a href="../index.html" class="btn btn-primary">Go Back Home</a>
+</aside>
+
+<main class="hero">
+  
+  <img class="phone reveal"
+       src="../assets/freedom_img.webp"
+       alt="phone_img"
+       width="362" height="387">
+
+  <p class="eyebrow reveal" style="--d:80ms">DEX Exchange</p>
+
+  <h1 class="reveal" style="--d:140ms">Welcome to Greatiby<br><span class="accent">Freedom</span> Swap</h1>
+
+  <div class="terms-box reveal" style="--d:200ms">
+    <p class="desk-only">By proceeding, you confirm that you have read, understood and agree to<br>the Freedom Swap Terms, KYC/AML Policy and Compliance Requirements</p>
+    <p class="mob-only">By proceeding, you confirm that you have<br>read, understood and agree to the Freedom<br>Swap Terms, KYC/AML Policy and<br>Compliance Requirements</p>
+  </div>
+
+  <label class="agree reveal" id="agreeLabel" style="--d:260ms">
+    <input type="checkbox" id="agree">
+    <span class="check"><i class="fa-solid fa-check"></i></span>
+    <span>I have read and agree to the <a href="#">Freedom Swap Rules</a></span>
+  </label>
+
+  <div class="actions reveal" style="--d:320ms">
+    <a data-href="supported_currencies.html" class="btn btn-primary" id="startBtn">
+      Get Started <i class="fa-solid fa-arrow-right"></i>
+    </a>
+    <a data-href="../help/help_center.html" class="btn btn-ghost" id="faqBtn">
+      FAQ <i class="fa-regular fa-circle-question"></i>
+    </a>
+  </div>
+
+  <div class="features">
+    <div class="feature reveal" style="--d:380ms"><i class="fa-regular fa-circle-user"></i><span>No Registration</span></div>
+    <div class="feature reveal" style="--d:460ms"><i class="fa-solid fa-computer-mouse"></i><span>No Sign In</span></div>
+    <div class="feature reveal" style="--d:540ms"><i class="fa-solid fa-lock"></i><span>No KYC Verification</span></div>
+  </div>
+</main>
+
+<footer class="site-footer reveal">
+  <div class="footer-top">
+    <a class="logo light" href="#">
+      <img src="../assets/gtb_logo_light.png" alt="logo">
+    </a>
+    <nav class="footer-links">
+      <a href="../legal/legal.html#terms-of-service">Terms</a>
+      <a href="../legal/legal.html#privacy-policy">Privacy</a>
+      <a href="../legal/legal.html#kyc-aml">AML</a>
+    </nav>
+  </div>
+  <p class="copy">&copy;" <span id="year">2026</span> Greatiby Digital Assets Exchange<span class="dash"> - </span><br class="mob-only">RC-1581814. All rights reserved.</p>
+</footer>
+
+<script>
+  (function () {
+    var hamburger = document.getElementById('hamburger');
+    var menu = document.getElementById('mobileMenu');
+    var overlay = document.getElementById('menuOverlay');
+    var closeBtn = document.getElementById('mobileClose');
+
+    function setMenu(open, returnFocus) {
+      menu.classList.toggle('open', open);
+      overlay.classList.toggle('open', open);
+      menu.inert = !open;
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) closeBtn.focus();
+      else if (returnFocus) hamburger.focus();
+    }
+
+    hamburger.addEventListener('click', function () { setMenu(true); });
+    closeBtn.addEventListener('click', function () { setMenu(false, true); });
+    overlay.addEventListener('click', function () { setMenu(false); });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) setMenu(false, true);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 980 && menu.classList.contains('open')) setMenu(false);
+    });
+
+    /* Copyright */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* Fade-in scroll */
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('in');
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('in'); });
+    }
+
+    var agree = document.getElementById('agree');
+    var agreeLabel = document.getElementById('agreeLabel');
+    var startBtn = document.getElementById('startBtn');
+    var faqBtn = document.getElementById('faqBtn');
+
+    function syncStart() {
+      startBtn.classList.toggle('is-off', !agree.checked);
+    }
+    agree.addEventListener('change', syncStart);
+    syncStart();
+
+    startBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (!agree.checked) {
+        agreeLabel.classList.remove('shake');
+        void agreeLabel.offsetWidth;
+        agreeLabel.classList.add('shake');
+        agree.focus();
+        return;
+      }
+      if (startBtn.dataset.href) window.location.href = startBtn.dataset.href;
+    });
+    faqBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (faqBtn.dataset.href) window.location.href = faqBtn.dataset.href;
+    });
+  })();
+</script>
+</body>
+</html>
